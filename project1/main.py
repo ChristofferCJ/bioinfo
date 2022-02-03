@@ -14,14 +14,13 @@ def parse_fasta(path: str) -> str:
         res += line.strip().replace(' ', '')
     return res.strip()
 
-def print_alignment(d: dict[str, str]):
+def parse_alignment(d: dict[str, str]) -> str:
     a = d['a'][::-1]
     b = d['b'][::-1]
-    print(f'{a}\n{b}\n')
+    return f'{a}\n{b}'
     
 
 def simple_pair():
-    print('Simple pair:')
     cost_matrix = [
         [10, 2, 5, 2],
         [2, 10, 2, 5],
@@ -36,14 +35,15 @@ def simple_pair():
         cost_matrix,
         lambda: -5
     )
-    print(f'Optimal cost of alignment: {cost}')
-    print(f'Number of alignments: {len(alignments)}')
-    print('Alignments:')
+    f = open('results/simple_pair.txt', 'w')
+    f.write('Results for simple_pair test case:\n')
+    f.write(f'Optimal cost of alignment: {cost}\n\n')
+    f.write(f'Number of alignments: {len(alignments)}\n')
+    f.write('Alignments:\n')
     for alignment in alignments:
-        print_alignment(alignment)
+        f.write(parse_alignment(alignment) + '\n\n')
 
 def fasta_files():
-    print('Fasta files:')
     cost_matrix = [
         [10, 2, 5, 2],
         [2, 10, 2, 5],
@@ -58,11 +58,15 @@ def fasta_files():
         cost_matrix,
         lambda: -5
     )
-    print(f'Optimal cost of alignment: {cost}')
-    print(f'Number of alignments: {len(alignments)}')
+    f = open('results/fasta_files.txt', 'w')
+    f.write('Results for fasta_files test case:\n')
+    f.write(f'Optimal cost of alignment: {cost}\n\n')
+    f.write(f'Number of alignments: {len(alignments)}\n')
+    f.write('Alignments:\n')
+    for alignment in alignments:
+        f.write(parse_alignment(alignment) + '\n\n')
 
 def example_one():
-    print('Example one:')
     cost_matrix = [
         [10, 2, 5, 2],
         [2, 10, 2, 5],
@@ -77,14 +81,15 @@ def example_one():
         cost_matrix,
         lambda: -5
     )
-    print(f'Optimal cost of alignment: {cost}')
-    print(f'Number of alignments: {len(alignments)}')
-    print('Alignments:')
+    f = open('results/example_one.txt', 'w')
+    f.write('Results for example_one test case:\n')
+    f.write(f'Optimal cost of alignment: {cost}\n\n')
+    f.write(f'Number of alignments: {len(alignments)}\n')
+    f.write('Alignments:\n')
     for alignment in alignments:
-        print_alignment(alignment)
+        f.write(parse_alignment(alignment) + '\n\n')
 
 def example_two():
-    print('Example two:')
     cost_matrix = [
         [10, 2, 5, 2],
         [2, 10, 2, 5],
@@ -99,11 +104,13 @@ def example_two():
         cost_matrix,
         lambda: -5
     )
-    print(f'Optimal cost of alignment: {cost}')
-    print(f'Number of alignments: {len(alignments)}')
-    print('Alignments:')
+    f = open('results/example_two.txt', 'w')
+    f.write('Results for example_two test case:\n')
+    f.write(f'Optimal cost of alignment: {cost}\n\n')
+    f.write(f'Number of alignments: {len(alignments)}\n')
+    f.write('Alignments:\n')
     for alignment in alignments:
-        print_alignment(alignment)
+        f.write(parse_alignment(alignment) + '\n\n')
 
 if __name__ == '__main__':
     simple_pair()

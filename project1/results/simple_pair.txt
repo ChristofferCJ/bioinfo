@@ -1,0 +1,8 @@
+Results for simple_pair test case:
+Optimal cost of alignment: 20
+
+Number of alignments: 1
+Alignments:
+AATAAT
+AA-GG-
+
