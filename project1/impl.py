@@ -7,7 +7,7 @@ def global_pairwise_alignment(
     c:      list[list[int]],
     gap:    Callable[[], int]
     ):
-    # prepend whitespace to both symbols to prevent index errors
+    # prepend whitespace to both sequences to prevent index errors
     a = ' ' + a
     b = ' ' + b
     # dynamic programming table
