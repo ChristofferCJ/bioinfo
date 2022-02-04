@@ -42,9 +42,7 @@ def global_pairwise_alignment(
         dp[i][j] = opt
         return opt
 
-    # recursion is hard, i opt for the easy way out
-    alignments: list[dict[str, str]] = []
-    def backtrack(i: int, j: int, acc: dict[str, str]):
+    def backtrack(i: int, j: int, acc: dict[str, str], alignments: list[dict[str, str]]) -> list[dict[str, str]]:
         a_idx = convert(a[i]) if i > 0 else -1
         b_idx = convert(b[j]) if j > 0 else -1
         curr = dp[i][j]
@@ -52,30 +50,32 @@ def global_pairwise_alignment(
         left = dp[i][j-1]
         up = dp[i-1][j]
         if curr is None or diag is None or left is None or up is None:
-            return
+            raise Exception('Dynamic programming table is not filled before calling backtrack')
         # base case
         if i == 0 and j == 0:
-            alignments.append(acc)
-            return
+            return alignments + [acc]
         # composites
+        res: list[dict[str, str]] = []
         if i > 0 and j > 0 and curr == (diag + c[a_idx][b_idx]):
             copy = deepcopy(acc)
             copy['a'] += a[i]
             copy['b'] += b[j]
-            backtrack(i - 1, j - 1, copy)
+            res += (backtrack(i - 1, j - 1, copy, alignments))
         if i >= 0 and j > 0 and curr == (left + gap()):
             copy = deepcopy(acc)
             copy['a'] += '-'
             copy['b'] += b[j]
-            backtrack(i, j - 1, copy)
+            res += backtrack(i, j - 1, copy, alignments)
         if i > 0 and j >= 0 and curr == (up + gap()):
             copy = deepcopy(acc)
             copy['a'] += a[i]
             copy['b'] += '-'
-            backtrack(i - 1, j, copy)
+            res += backtrack(i - 1, j, copy, alignments)
         
+        return res
+
     # call cost to get optimal cost of alignment
     cost = compute(len(a) - 1, len(b) - 1)
     # find all possible optimal allignments
-    backtrack(len(a) - 1, len(b) - 1, {'a' : '', 'b' : ''})
+    alignments = backtrack(len(a) - 1, len(b) - 1, {'a' : '', 'b' : ''}, [])
     return cost, alignments
