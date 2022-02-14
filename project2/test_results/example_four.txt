@@ -1,0 +1,8 @@
+Results for example_two test case:
+Optimal cost of alignment: 24
+
+Number of alignments: 1
+Alignments:
+acgtgtcaacgt
+acgtcgtagcta
+

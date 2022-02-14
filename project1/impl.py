@@ -76,6 +76,8 @@ def global_pairwise_alignment(
 
     # call cost to get optimal cost of alignment
     cost = compute(len(a) - 1, len(b) - 1)
+    for row in dp:
+        print(row)
     # find all possible optimal allignments
     alignments = backtrack(len(a) - 1, len(b) - 1, {'a' : '', 'b' : ''}, [])
     return cost, alignments
