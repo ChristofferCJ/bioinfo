@@ -8,10 +8,7 @@ To use the program, start by cloning this git repository to your computer:
 ```
 git clone https://github.com/ChristofferCJ/bioinfo.git
 ```
-Open a terminal, and navigate to the `project2` folder. From here, the program can be used as follows:
-```bash
-python main.py 
-```
+From here, navigate to the `main.py` file in the `project2` folder. In this file, you are able to specify cost matrix, gap cost, as well as the two sequences you want to use. 
 
 ## Method
 The implementation of `global_pairwise_alignment` can be seen

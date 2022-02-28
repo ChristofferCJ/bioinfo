@@ -1,4 +1,4 @@
-from util import parse_fasta
+from util import parse_fasta, parse_alignment
 from impl import global_pairwise_alignment
 
 def main():
@@ -31,6 +31,17 @@ def main():
         gap_cost,
         perform_backtrack
     )
+
+    f = open('case_results/case_one.txt', 'w')
+    f.write('Results for case_one test case with gap cost g(k) = 5*k:\n')
+    f.write(f'Optimal cost of alignment: {cost}\n\n')
+    if perform_backtrack:
+        f.write(f'Number of alignments: {len(alignments)}\n')
+        f.write('Alignments:\n')
+        for alignment in alignments:
+            f.write(parse_alignment(alignment) + '\n\n')
+        f.write('\n\n')
+
 
 if __name__ == '__main__':
     main()
