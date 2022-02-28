@@ -1,0 +1,23 @@
+My implementation of the algortihm can be seen here: https://github.com/ChristofferCJ/bioinfo/blob/main/project1/impl.py
+
+All optimal costs, number of optimal alignments and all optimal alignments can be seen here: https://github.com/ChristofferCJ/bioinfo/tree/main/project1/results
+(simple_pair.txt is for Question 1, fasta_files.txt is for Question 2)
+Question 1:
+The optimal cost of an alignment of AATAAT and AAGG is 20.
+
+Question 2:
+The optimal cost of an alignment of seq1.fasta and seq2.fasta is 1346.
+
+Question 3:
+An optimal alignment of AATAAT and AAGG is:
+AATAAT
+AA-GG-
+
+An optimal alignment of seq1.fasta and seq2.fasta is:
+GGCCTAAAGGCGCCGGTCTTTCGTACCCCAAAATCTCG-GCATTTTAAGATAAGTG-AGTGTTGCGTTACACTAGCGATCTACCGCGTCTTATACT-TAAGCG-TATGCCC-AGATCTGA-CTAATCGTGCCCCCGGATTAGACGGGCTTGATGGGAAAGAACAGCTCGTC---TGTT-TAC--GTATAAACAGAATCGCCTGGGTTCGC
+GGGCTAAAGGTTAGGGTCTTTCACACTAAAGAGTGGTGCGTATCGT-GGCTAA-TGTACCGCTTC-TGGTA-TCGTGGCTTA-CG-GCCAGAC-CTACAAGTACTAGACCTGAGAACTAATCTTGTCGAGCCTTC-CATT-GA-GGG--TAATGGGAGAGAACATCGAGTCAGAAGTTATTCTTGTTTACGTAGAATCGCCTGGGTCCGC
+
+Question 4:
+There is 1 optimal alignment of AATAAT and AAGG.
+
+There are 256 optimal alignments of seq1.fasta and seq2.fasta.

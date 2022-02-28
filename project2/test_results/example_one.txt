@@ -1,19 +1,13 @@
 Results for example_one test case:
 Optimal cost of alignment: 27
 
-Number of alignments: 6
+Number of alignments: 4
 Alignments:
-TCACGAGA
-TC-GA-T
-
 TCCAGAGA
 T-C-GA-T
 
 TCCAGAGA
 TC--GA-T
-
-TCACGAGA
-TC-GAT-
 
 TCCAGAGA
 T-C-GAT-

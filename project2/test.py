@@ -166,7 +166,7 @@ def example_four():
 
 if __name__ == '__main__':
     simple_pair()
-    # fasta_files()
+    fasta_files()
     example_one()
     example_two()
     example_three()
