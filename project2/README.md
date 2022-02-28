@@ -3,6 +3,16 @@
 ## Introduction
 The scope of this project is to implement different types of gap costs for global alignment. I decided to implement a catch-all function, `global_pairwise_alignment`, which is capable of handling all different types of gap costs, including linear, affine and constant. I have implemented the function recursively, both for finding the optimal cost, as well as finding all possible alignments. The function works as intended, but I have not optimized finding the optimal cost to using linear space, using Hirschberg's idea. Additionally, since I have opted for finding all possible optimal alignments, instead of just one, the backtracking part of the function is rather slow.
 
+## How to use
+To use the program, start by cloning this git repository to your computer:
+```
+git clone https://github.com/ChristofferCJ/bioinfo.git
+```
+Open a terminal, and navigate to the `project2` folder. From here, the program can be used as follows:
+```bash
+python main.py 
+```
+
 ## Method
 The implementation of `global_pairwise_alignment` can be seen
 <a href="https://github.com/ChristofferCJ/bioinfo/blob/main/project2/impl.py">here</a>, which includes the inner functions `compute`, `insert`, `delete` and `backtrack` mentioned throughout this section.
@@ -49,4 +59,12 @@ An important thing to notice is the `checking` variable. I use this variable to 
 To test my programs, I have used the examples provided in Project 1 and Project 2. The main reason for using these exampels to verify my program, is that I can compare the output of these examples to the answers given in the examples, to verify the correctness. The way I test these examples can be seen in <a href="https://github.com/ChristofferCJ/bioinfo/blob/main/project2/test.py">here</a>. The test cases provided in *project2_examples.txt* works as expected, where I have checked my answers against the ones provided in the text file to verify. The results for all the test cases in *project2_examples.txt* can be seen <a href="https://github.com/ChristofferCJ/bioinfo/tree/main/project2/case_results">here</a>.
 
 ## Experiments
-To evaluate the running time of my algorithm, in order to compare it to the theoretical running time, I have created a small script, `performance.py`. The script simply runs the algorithm with a given set of sequences, cost matrix and gap cost, and measures the running time of the algortihm, in seconds. I have performed this evaluation on the four different cases given in *project2_examples.txt*. The resulsts can be seen <a href="https://github.com/ChristofferCJ/bioinfo/tree/main/project2/case_results">here</a>.
+To evaluate the running time of my algorithm, in order to compare it to the theoretical running time, I have created a small script, `performance.py`. The script simply runs the algorithm with a given set of sequences, cost matrix and gap cost, and measures the running time of the algortihm, in seconds. I have performed this evaluation on the four different cases given in *project2_examples.txt*. The resulsts can be seen <a href="https://github.com/ChristofferCJ/bioinfo/tree/main/project2/performance_results">here</a>. Since my implementation handles all different types of gap costs, I have created a single graph over the performance resulsts of all four test cases, to check the evaluated running time against the theoretical running time. The theoretical running time of my implementation is O(nm), for inputs of size n and m. \
+|        |  n|  m| Running time (ms) |
+|--------|---|---|-------------------|
+| Case 1 | 12| 12|             0.8625|
+| Case 2 |  6|  4|             0.2218|
+| Case 3 |  8|  5|             0.2486|
+| Case 4 |198|198|           214.0946|
+
+The above table shows the input sizes and running times of the four cases provided in *project2_examples.txt*. From the table, we can extrapolate that the empirical average running time  over the four test cases is f(n, m) = 0.006727 * n * m. This means that the empricial running times is in line with the expected theoretical running times.
