@@ -2,11 +2,12 @@ from typing import Callable, Optional, Tuple
 from copy import deepcopy
 
 def global_pairwise_alignment(
-    a:          str,
-    b:          str,
-    c:          list[list[int]],
-    gap:        Callable[[int], int],
-    opt_method: str
+    a:                  str,
+    b:                  str,
+    c:                  list[list[int]],
+    gap:                Callable[[int], int],
+    opt_method:         str,
+    perform_backtrack:  bool = True
     ):
     # check if opt_method is valid
     opt_method = opt_method.lower()
@@ -35,7 +36,7 @@ def global_pairwise_alignment(
         if v is not None:
             return v
         vals: list[Optional[int]] = [None for _ in range(4)]
-        if i > 0 and j > 0: 
+        if i > 0 and j > 0:
             a_idx = convert(a[i])
             b_idx = convert(b[j])
             vals[0] = compute(i - 1, j - 1) + c[a_idx][b_idx]
@@ -116,7 +117,7 @@ def global_pairwise_alignment(
     # call cost to get optimal cost of alignment
     cost = compute(len(a) - 1, len(b) - 1)
     # find all possible optimal allignments
-    for row in dp:
-        print(row)
-    alignments = backtrack(len(a) - 1, len(b) - 1, 1, {'a' : '', 'b' : ''}, [])
+    alignments = []
+    if perform_backtrack:
+        alignments = backtrack(len(a) - 1, len(b) - 1, 1, {'a' : '', 'b' : ''}, [])
     return cost, alignments

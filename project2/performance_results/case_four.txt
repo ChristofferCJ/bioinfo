@@ -1,0 +1,4 @@
+Performance for case_four test case with gap cost g(k) = 5*k:
+Running time: 0.21409456000037608
+n: 198
+m: 198
