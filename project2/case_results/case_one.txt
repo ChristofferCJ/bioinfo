@@ -1,0 +1,21 @@
+Results for case_one test case with gap cost g(k) = 5*k:
+Optimal cost of alignment: 22
+
+Number of alignments: 2
+Alignments:
+acgt-gtcaacgt
+acgtcgt-agcta
+
+acgt-gtcaacgt-
+acgtcgt-agc-ta
+
+
+
+Results for case_one test case with gap cost g(k) = 5+5*k:
+Optimal cost of alignment: 24
+
+Number of alignments: 1
+Alignments:
+acgtgtcaacgt
+acgtcgtagcta
+

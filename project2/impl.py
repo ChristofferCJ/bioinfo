@@ -35,7 +35,7 @@ def global_pairwise_alignment(
         if v is not None:
             return v
         vals: list[Optional[int]] = [None for _ in range(4)]
-        if i > 0 and j > 0:
+        if i > 0 and j > 0: 
             a_idx = convert(a[i])
             b_idx = convert(b[j])
             vals[0] = compute(i - 1, j - 1) + c[a_idx][b_idx]

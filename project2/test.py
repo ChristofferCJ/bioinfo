@@ -20,6 +20,163 @@ def parse_alignment(d: dict[str, str]) -> str:
     return f'{a}\n{b}'
     
 
+def case_one():
+    cost_matrix = [
+        [0, 5, 2, 5],
+        [5, 0, 5, 2],
+        [2, 5, 0, 5],
+        [5, 2, 5, 0]
+    ]
+    a = 'acgtgtcaacgt'
+    b = 'acgtcgtagcta'
+    cost, alignments = global_pairwise_alignment(
+        a,
+        b,
+        cost_matrix,
+        lambda x: 5*x,
+        'min'
+    )
+    f = open('case_results/case_one.txt', 'w')
+    f.write('Results for case_one test case with gap cost g(k) = 5*k:\n')
+    f.write(f'Optimal cost of alignment: {cost}\n\n')
+    f.write(f'Number of alignments: {len(alignments)}\n')
+    f.write('Alignments:\n')
+    for alignment in alignments:
+        f.write(parse_alignment(alignment) + '\n\n')
+    f.write('\n\n')
+
+    cost, alignments = global_pairwise_alignment(
+    a,
+    b,
+    cost_matrix,
+    lambda x: 5+5*x,
+    'min'
+    )
+    f.write('Results for case_one test case with gap cost g(k) = 5+5*k:\n')
+    f.write(f'Optimal cost of alignment: {cost}\n\n')
+    f.write(f'Number of alignments: {len(alignments)}\n')
+    f.write('Alignments:\n')
+    for alignment in alignments:
+        f.write(parse_alignment(alignment) + '\n\n')
+
+def case_two():
+    cost_matrix = [
+        [0, 5, 2, 5],
+        [5, 0, 5, 2],
+        [2, 5, 0, 5],
+        [5, 2, 5, 0]
+    ]
+    a = 'aataat'
+    b = 'aagg'
+    cost, alignments = global_pairwise_alignment(
+        a,
+        b,
+        cost_matrix,
+        lambda x: 5*x,
+        'min'
+    )
+    f = open('case_results/case_two.txt', 'w')
+    f.write('Results for case_two test case with gap cost g(k) = 5*k:\n')
+    f.write(f'Optimal cost of alignment: {cost}\n\n')
+    f.write(f'Number of alignments: {len(alignments)}\n')
+    f.write('Alignments:\n')
+    for alignment in alignments:
+        f.write(parse_alignment(alignment) + '\n\n')
+    f.write('\n\n')
+
+    cost, alignments = global_pairwise_alignment(
+    a,
+    b,
+    cost_matrix,
+    lambda x: 5+5*x,
+    'min'
+    )
+    f.write('Results for case_two test case with gap cost g(k) = 5+5*k:\n')
+    f.write(f'Optimal cost of alignment: {cost}\n\n')
+    f.write(f'Number of alignments: {len(alignments)}\n')
+    f.write('Alignments:\n')
+    for alignment in alignments:
+        f.write(parse_alignment(alignment) + '\n\n')
+
+def case_three():
+    cost_matrix = [
+        [0, 5, 2, 5],
+        [5, 0, 5, 2],
+        [2, 5, 0, 5],
+        [5, 2, 5, 0]
+    ]
+    a = 'tccagaga'
+    b = 'tcgat'
+    cost, alignments = global_pairwise_alignment(
+        a,
+        b,
+        cost_matrix,
+        lambda x: 5*x,
+        'min'
+    )
+    f = open('case_results/case_three.txt', 'w')
+    f.write('Results for case_three test case with gap cost g(k) = 5*k:\n')
+    f.write(f'Optimal cost of alignment: {cost}\n\n')
+    f.write(f'Number of alignments: {len(alignments)}\n')
+    f.write('Alignments:\n')
+    for alignment in alignments:
+        f.write(parse_alignment(alignment) + '\n\n')
+    f.write('\n\n')
+
+    cost, alignments = global_pairwise_alignment(
+    a,
+    b,
+    cost_matrix,
+    lambda x: 5+5*x,
+    'min'
+    )
+    f.write('Results for case_three test case with gap cost g(k) = 5+5*k:\n')
+    f.write(f'Optimal cost of alignment: {cost}\n\n')
+    f.write(f'Number of alignments: {len(alignments)}\n')
+    f.write('Alignments:\n')
+    for alignment in alignments:
+        f.write(parse_alignment(alignment) + '\n\n')
+
+
+def case_four():
+    cost_matrix = [
+        [0, 5, 2, 5],
+        [5, 0, 5, 2],
+        [2, 5, 0, 5],
+        [5, 2, 5, 0]
+    ]
+    a = parse_fasta('fasta/case_four_seq1.fasta')
+    b = parse_fasta('fasta/case_four_seq2.fasta')
+    cost, alignments = global_pairwise_alignment(
+        a,
+        b,
+        cost_matrix,
+        lambda x: 5*x,
+        'min'
+    )
+    f = open('case_results/case_four.txt', 'w')
+    f.write('Results for case_four test case with gap cost g(k) = 5*k:\n')
+    f.write(f'Optimal cost of alignment: {cost}\n\n')
+    f.write(f'Number of alignments: {len(alignments)}\n')
+    f.write('Alignments:\n')
+    for alignment in alignments:
+        f.write(parse_alignment(alignment) + '\n\n')
+    f.write('\n\n')
+
+    cost, alignments = global_pairwise_alignment(
+    a,
+    b,
+    cost_matrix,
+    lambda x: 5+5*x,
+    'min'
+    )
+    f.write('Results for case_four test case with gap cost g(k) = 5+5*k:\n')
+    f.write(f'Optimal cost of alignment: {cost}\n\n')
+    f.write(f'Number of alignments: {len(alignments)}\n')
+    f.write('Alignments:\n')
+    for alignment in alignments:
+        f.write(parse_alignment(alignment) + '\n\n')
+
 def simple_pair():
     cost_matrix = [
         [10, 2, 5, 2],
@@ -165,9 +322,13 @@ def example_four():
         f.write(parse_alignment(alignment) + '\n\n')
 
 if __name__ == '__main__':
-    simple_pair()
-    fasta_files()
-    example_one()
-    example_two()
-    example_three()
-    example_four()
+    # simple_pair()
+    # fasta_files()
+    # example_one()
+    # example_two()
+    # example_three()
+    # example_four()
+    case_one()
+    case_two()
+    case_three()
+    case_four()
