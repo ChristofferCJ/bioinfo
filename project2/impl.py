@@ -1,8 +1,6 @@
 from typing import Callable, Optional, Tuple
 from copy import deepcopy
 
-# small class to represent linear functions
-
 def global_pairwise_alignment(
     a:          str,
     b:          str,
@@ -97,25 +95,20 @@ def global_pairwise_alignment(
             copy = deepcopy(acc)
             copy['a'] += a[i]
             copy['b'] += b[j]
-            print(f'Going diag: {i} {j} {k}')
             res += (backtrack(i - 1, j - 1, 1, copy, alignments))
         if i >= 0 and j > 0 and curr == (left + gap(k)) and checking != 'Up':
             copy = deepcopy(acc)
             copy['a'] += '-' * k
             copy['b'] += b[j-k+1:j+1]
-            print(f'Going left: {i} {j} {k}')
             res += backtrack(i, j - k, 1, copy, alignments)
         elif j > k and checking != 'Up':
-            print(f'Checking left: {i} {j} {k}')
             res += backtrack(i, j, k + 1, acc, alignments, 'Left')
         if i > 0 and j >= 0 and curr == (up + gap(k)) and checking != 'Left':
             copy = deepcopy(acc)
             copy['a'] += a[i-k+1:i+1]
             copy['b'] += '-'
-            print(f'Going up: {i} {j} {k}')
             res += backtrack(i - k, j, 1, copy, alignments)
         elif i > k and checking != 'Left':
-            print(f'Checking up: {i} {j} {k}')
             res += backtrack(i, j, k + 1, acc, alignments, 'Up')
         
         return res
