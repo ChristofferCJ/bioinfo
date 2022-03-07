@@ -6,10 +6,12 @@ from typing import Any
 args = {}
 
 def run():
+    print('Parsing values...')
     for arg in sys.argv[1:]:
         parse_arg(arg)
     validate_args(args)
     output_specified = 'output' in args.keys()
+    print('Computing optimal cost and alignments...')
     cost, alignments = global_pairwise_alignment(
         a=args['seq1'],
         b=args['seq2'],
@@ -29,7 +31,6 @@ def parse_arg(arg: str):
     [id, val] = arg.split('=')
     id = id.strip()
     val = val.strip()
-    print(f'Parsing values: \'{id}\', \'{val}\'')
     match id:
         case 'seq1' | 's1':
             if val.endswith('.fasta'):
