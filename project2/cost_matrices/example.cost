@@ -1,0 +1,13 @@
+# Example .cost file for cost matrix.
+# Cost matrices are given by a 4x4 whitespace separated grid
+# Where each row and column denotes A, T, C, G, in this order, like this:
+#   A T C G
+# A 0 0 0 0
+# T 0 0 0 0
+# C 0 0 0 0
+# G 0 0 0 0
+
+1 2 3 4
+2 3 4 1
+3 4 1 2
+4 1 2 3

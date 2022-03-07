@@ -4,12 +4,60 @@
 The scope of this project is to implement different types of gap costs for global alignment. I decided to implement a catch-all function, `global_pairwise_alignment`, which is capable of handling all different types of gap costs, including linear, affine and constant. I have implemented the function recursively, both for finding the optimal cost, as well as finding all possible alignments. The function works as intended, but I have not optimized finding the optimal cost to using linear space, using Hirschberg's idea. Additionally, since I have opted for finding all possible optimal alignments, instead of just one, the backtracking part of the function is rather slow.
 
 ## How to use
+The program requires `python3.10` or above. \
 To use the program, start by cloning this git repository to your computer:
 ```
 git clone https://github.com/ChristofferCJ/bioinfo.git
 ```
-From here, navigate to the `main.py` file in the `project2` folder. In this file, you are able to specify cost matrix, gap cost, as well as the two sequences you want to use. 
+From here, navigate to the `project2` folder in a terminal, and run the following command:
+```
+python run.py [ARGS]
+```
+All arguments to the program is of the format `[IDENTIFIER]=[VALUE]`, and all possible identifiers and values are explained below. \
+Example usage:
+```
+python run.py s1=seq1.fasta s2=seq2.fasta c=cases.cost g=5*x opt=min o=results.txt
+```
+### Identifiers
+- `seq1` or `s1` (required): \
+Used to specify the first sequence to use for global pairwise alignment. The sequence can either be specified as a .fasta file, or given directly as an argument. To specify a .fasta file, put the .fasta file in the `/fasta` folder in the project, and write the name of the fasta file as the value. \
+Example usage:
+```
+# for specifying fasta files
+seq1=some_fast_file.fasta
 
+# for specfying sequences directly
+seq1=atcgtgca
+```
+- `seq2` or `s2` (required): \
+Used to specify the second sequence to sue for global pairwise alignemnt. Usage is the same as for `seq1`.
+- `cost` or `c` (required): \
+Used to specify the cost matrix. Excepts files that end with '.cost', which are located in the `/cost_matrices` folder. \
+Example usage:
+```
+cost=example.cost
+```
+- `gapcost` or `g` (required): \
+Used to specify the gap cost function used for global pairwise alignment. The function should be specified as a python expression, including the variable `x` for linear and affine gap cost functions. \
+Example usage:
+```
+# constant
+gapcost=5
+
+# linear
+gapcost=5*x
+
+# affine
+gapcost=5+5*x
+```
+- `optimization` or `opt` (required): \
+Used to specify whether the global pairwise alignment should minimize or maximise the optimal cost. Accepted values are `min` or `max`. \
+- `output` or `o` (optional): \
+Used to specify an output file, if the optimal alignments are desired. The output file, with optimal cost as well as alignments, will be placed in the `/output` folder. \
+Example usage:
+```
+output=output.txt
+```
 ## Method
 The implementation of `global_pairwise_alignment` can be seen
 <a href="https://github.com/ChristofferCJ/bioinfo/blob/main/project2/impl.py">here</a>, which includes the inner functions `compute`, `insert`, `delete` and `backtrack` mentioned throughout this section.
@@ -65,3 +113,6 @@ To evaluate the running time of my algorithm, in order to compare it to the theo
 | Case 4 |198|198|           214.0946|
 
 The above table shows the input sizes and running times of the four cases provided in *project2_examples.txt*. From the table, we can extrapolate that the empirical average running time  over the four test cases is f(n, m) = 0.006727 * n * m. This means that the empricial running times is in line with the expected theoretical running times.
+
+## Note
+My table is not a graph, which was expected of my. Initally, I wanted to do regression over me experiments, to see how well the empirical running times fit the theoretical ones, but i was not sure how to plot it in a graph, since the running time depends on both `n` and `m` (which would result in a 3D graph, when running time is also added).

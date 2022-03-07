@@ -8,7 +8,7 @@ def global_pairwise_alignment(
     gap:                Callable[[int], int],
     opt_method:         str,
     perform_backtrack:  bool = True
-    ):
+    ) -> tuple[int, list[dict[str, str]]]:
     # check if opt_method is valid
     opt_method = opt_method.lower()
     if opt_method not in ['max', 'min']:
