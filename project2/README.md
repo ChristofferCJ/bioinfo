@@ -32,7 +32,7 @@ seq1=atcgtgca
 - `seq2` or `s2` (required): \
 Used to specify the second sequence to sue for global pairwise alignemnt. Usage is the same as for `seq1`.
 - `cost` or `c` (required): \
-Used to specify the cost matrix. Excepts files that end with '.cost', which are located in the `/cost_matrices` folder. \
+Used to specify the cost matrix. Excepts files that end with '.cost', which are located in the `/cost_matrices` folder. For more information about how to specify .cost files, check out `example.cost` in `/cost_matrices`.\
 Example usage:
 ```
 cost=example.cost
