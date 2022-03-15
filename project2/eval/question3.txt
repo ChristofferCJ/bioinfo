@@ -1,0 +1,208 @@
+Optimal cost for alignments:
+
+0 226 206 202 209 
+226 0 239 223 220 
+206 239 0 219 205 
+202 223 219 0 210 
+209 220 205 210 0 
+
+Alignment for seq1 and seq1:
+>seq1
+tatggagagaataaaagaactgagagatctaatgtcgcagtcccgcactcgcgagatactcactaagaccactgtggaccatatggccataatcaaaaag
+
+>seq2
+tatggagagaataaaagaactgagagatctaatgtcgcagtcccgcactcgcgagatactcactaagaccactgtggaccatatggccataatcaaaaag
+----------------------------------------------------------------------------------------------------
+
+Alignment for seq1 and seq2:
+>seq1
+tatgga-gagaataaaagaactgagagatct-aatgtcgcagtcccgcac-tcgcgagatact-cactaagac-cactgtggaccatatggccataatcaaaaag
+
+>seq2
+-atggatgtcaatccga-ctctacttttcctaaaaattccagcgcaaaatgccataag-caccacattcccttatactggagatcct-cca-tacagccatggaa
+---------------------------------------------------------------------------------------------------------
+
+Alignment for seq1 and seq3:
+>seq1
+tatggagagaataaaaga-actgagagatctaatgtcgcagtcccgcactcg-cgagatactcactaagaccactgtggaccatatggccataat-c--aaa---aag
+
+>seq2
+t-c-ca-a-aatggaagactttgtgcga-c-aatgcttcaatccaatgatcgtcgagct-tgcggaaaaggcaatg-aaagaatatggggaagatccgaaaatcgaaa
+------------------------------------------------------------------------------------------------------------
+
+Alignment for seq1 and seq4:
+>seq1
+-tatg-ga-gagaataaaag--a-actgagagatctaatgt-cgcagtcccgcactcgcgagatactcactaagaccac-tgtggaccat-atggccataatcaaaaag
+
+>seq2
+aaaagcaacaaaaatgaaggcaatactagtagttctgctatataca-t-ttgcaaccgc-aaatgcagac--acattatgtataggttatcat-g-cg-aa-caattca
+-------------------------------------------------------------------------------------------------------------
+
+Alignment for seq1 and seq5:
+>seq1
+tatggagaga-ataaaagaactgagagatctaatgtcgcagtcccgcactcgcgagatactcactaagaccactgtgga---cca-tatggc-ca-taatcaaaa-ag
+
+>seq2
+-at-gagtgacatcgaag--ccatggcgtctcaag--gca-ccaaacgatcatatga-acaaatggagactggtggggagcgccaggatgccacagaaatcagagcat
+------------------------------------------------------------------------------------------------------------
+
+Alignment for seq2 and seq1:
+>seq1
+-atggatgtcaatccga-ctctacttttcctaaaaattccagcgcaaaatgccataag-caccacattcccttatactggagatcct-cca-tacagccatggaa
+
+>seq2
+tatgga-gagaataaaagaactgagagatct-aatgtcgcagtcccgcac-tcgcgagatact-cactaagac-cactgtggaccatatggccataatcaaaaag
+---------------------------------------------------------------------------------------------------------
+
+Alignment for seq2 and seq2:
+>seq1
+atggatgtcaatccgactctacttttcctaaaaattccagcgcaaaatgccataagcaccacattcccttatactggagatcctccatacagccatggaa
+
+>seq2
+atggatgtcaatccgactctacttttcctaaaaattccagcgcaaaatgccataagcaccacattcccttatactggagatcctccatacagccatggaa
+----------------------------------------------------------------------------------------------------
+
+Alignment for seq2 and seq3:
+>seq1
+------atggatg--tcaatccgactctacttt-tcctaaaaattccagcgcaaaatgccataagcaccacattcccttatactggagatcctccatacagccatggaa
+
+>seq2
+tccaaaatggaagactttgtgcgacaatgcttcaatccaatga-t-cgtcg-agcttg-cggaaaaggca-atgaaagaata-tggggaagatccg-aaaatc--gaaa
+-------------------------------------------------------------------------------------------------------------
+
+Alignment for seq2 and seq4:
+>seq1
+atggatgtcaatccgactcta-cttttcctaaaaattccagcgca-aaatgccataa--gc-accacattc-ccttatactggagatcctccatac-agccatggaa
+
+>seq2
+a-aaa-g-caacaaaaatgaaggcaatactagtagttctgctatatacat-ttgcaaccgcaaatgcagacacattatg-tataggttat-catgcgaacaat-tca
+-----------------------------------------------------------------------------------------------------------
+
+Alignment for seq2 and seq5:
+>seq1
+atggatgtcaatccgactctacttttcctaaaaattcc-agcg-caaaatgccataagcaccacattcccttata-c-tggagatcctccatacagccatgg-aa
+
+>seq2
+atgagtgac-at-cgaagccatggcgtctcaaggcaccaaacgatcatatg-aacaaatg-gagactggtggggagcgccaggatgccacaga-aatcagagcat
+---------------------------------------------------------------------------------------------------------
+
+Alignment for seq3 and seq1:
+>seq1
+t-c-ca-a-aatggaagactttgtgcga-c-aatgcttcaatccaatgatcgtcgagct-tgcggaaaaggcaatg-aaagaatatggggaagatccgaaaatcgaaa
+
+>seq2
+tatggagagaataaaaga-actgagagatctaatgtcgcagtcccgcactcg-cgagatactcactaagaccactgtggaccatatggccataat-c--aaa---aag
+------------------------------------------------------------------------------------------------------------
+
+Alignment for seq3 and seq2:
+>seq1
+tccaaaatggaagactttgtgcgacaatgcttcaatccaatga-t-cgtcg-agcttg-cggaaaaggca-atgaaagaata-tggggaagatccg-aaaatc--gaaa
+
+>seq2
+------atggatg--tcaatccgactctacttt-tcctaaaaattccagcgcaaaatgccataagcaccacattcccttatactggagatcctccatacagccatggaa
+-------------------------------------------------------------------------------------------------------------
+
+Alignment for seq3 and seq3:
+>seq1
+tccaaaatggaagactttgtgcgacaatgcttcaatccaatgatcgtcgagcttgcggaaaaggcaatgaaagaatatggggaagatccgaaaatcgaaa
+
+>seq2
+tccaaaatggaagactttgtgcgacaatgcttcaatccaatgatcgtcgagcttgcggaaaaggcaatgaaagaatatggggaagatccgaaaatcgaaa
+----------------------------------------------------------------------------------------------------
+
+Alignment for seq3 and seq4:
+>seq1
+tccaaaatggaagactttgtgcgacaatgct-tcaa-tccaatg-at-cg-tcg-agcttgcgga-aaaggca-atgaaagaatatggggaagatccgaa-aatcgaaa
+
+>seq2
+--aaaagcaacaaa-aatg-aaggcaatactagtagttctgctatatacatttgcaac-cgcaaatgcagacacat-tatgtata-ggttatcatgcgaacaatt--ca
+-------------------------------------------------------------------------------------------------------------
+
+Alignment for seq3 and seq5:
+>seq1
+-t--ccaaaatggaagactttgtgcgacaatgcttcaatccaatgatcgtcgagcttgcggaaaaggcaatgaaagaatatggggaagatccgaaaatc-gaa-a-
+
+>seq2
+atgagtgacatcgaagccatggcgtctcaaggcaccaa-acgatcat-at-gaacaaatgg-aga-ctggtg-gggagcgccaggatgccacagaaatcagagcat
+----------------------------------------------------------------------------------------------------------
+
+Alignment for seq4 and seq1:
+>seq1
+aaaagcaacaaaaatgaaggcaatactagtagttctgctatataca-t-ttgcaaccgc-aaatgcagac--acattatgtataggttatcat-g-cg-aa-caattca
+
+>seq2
+-tatg-ga-gagaataaaag--a-actgagagatctaatgt-cgcagtcccgcactcgcgagatactcactaagaccac-tgtggaccat-atggccataatcaaaaag
+-------------------------------------------------------------------------------------------------------------
+
+Alignment for seq4 and seq2:
+>seq1
+a-aaa-g-caacaaaaatgaaggcaatactagtagttctgctatatacat-ttgcaaccgcaaatgcagacacattatg-tataggttat-catgcgaacaat-tca
+
+>seq2
+atggatgtcaatccgactcta-cttttcctaaaaattccagcgca-aaatgccataa--gc-accacattc-ccttatactggagatcctccatac-agccatggaa
+-----------------------------------------------------------------------------------------------------------
+
+Alignment for seq4 and seq3:
+>seq1
+--aaaagcaacaaa-aatg-aaggcaatactagtagttctgctatatacatttgcaac-cgcaaatgcagacacat-tatgtata-ggttatcatgcgaacaatt--ca
+
+>seq2
+tccaaaatggaagactttgtgcgacaatgct-tcaa-tccaatg-at-cg-tcg-agcttgcgga-aaaggca-atgaaagaatatggggaagatccgaa-aatcgaaa
+-------------------------------------------------------------------------------------------------------------
+
+Alignment for seq4 and seq4:
+>seq1
+aaaagcaacaaaaatgaaggcaatactagtagttctgctatatacatttgcaaccgcaaatgcagacacattatgtataggttatcatgcgaacaattca
+
+>seq2
+aaaagcaacaaaaatgaaggcaatactagtagttctgctatatacatttgcaaccgcaaatgcagacacattatgtataggttatcatgcgaacaattca
+----------------------------------------------------------------------------------------------------
+
+Alignment for seq4 and seq5:
+>seq1
+aaaagcaaca--aaaatgaaggcaatactagtagttctgctatatacatt-tgcaaccgcaaatgcagac--acattatgta-taggttatcatgcgaa-caattca-
+
+>seq2
+atgagtgacatcgaagccatggc-gt-ctca-ag-gc-accaaacg-atcatatga--acaaatggagactggtggggagcgccaggatgccacagaaatcagagcat
+------------------------------------------------------------------------------------------------------------
+
+Alignment for seq5 and seq1:
+>seq1
+-at-gagtgacatcgaag--ccatggcgtctcaag--gca-ccaaacgatcatatga-acaaatggagactggtggggagcgccaggatgccacagaaatcagagcat
+
+>seq2
+tatggagaga-ataaaagaactgagagatctaatgtcgcagtcccgcactcgcgagatactcactaagaccactgtgga---cca-tatggc-ca-taatcaaaa-ag
+------------------------------------------------------------------------------------------------------------
+
+Alignment for seq5 and seq2:
+>seq1
+atgagtgac-at-cgaagccatggcgtctcaaggcaccaaacgatcatatg-aacaaatg-gagactggtggggagcgccaggatgccacaga-aatcagagcat
+
+>seq2
+atggatgtcaatccgactctacttttcctaaaaattcc-agcg-caaaatgccataagcaccacattcccttata-c-tggagatcctccatacagccatgg-aa
+---------------------------------------------------------------------------------------------------------
+
+Alignment for seq5 and seq3:
+>seq1
+atgagtgacatcgaagccatggcgtctcaaggcaccaa-acgatcat-at-gaacaaatgg-aga-ctggtg-gggagcgccaggatgccacagaaatcagagcat
+
+>seq2
+-t--ccaaaatggaagactttgtgcgacaatgcttcaatccaatgatcgtcgagcttgcggaaaaggcaatgaaagaatatggggaagatccgaaaatc-gaa-a-
+----------------------------------------------------------------------------------------------------------
+
+Alignment for seq5 and seq4:
+>seq1
+atgagtgacatcgaagccatggc-gt-ctca-ag-gc-accaaacg-atcatatga--acaaatggagactggtggggagcgccaggatgccacagaaatcagagcat
+
+>seq2
+aaaagcaaca--aaaatgaaggcaatactagtagttctgctatatacatt-tgcaaccgcaaatgcagac--acattatgta-taggttatcatgcgaa-caattca-
+------------------------------------------------------------------------------------------------------------
+
+Alignment for seq5 and seq5:
+>seq1
+atgagtgacatcgaagccatggcgtctcaaggcaccaaacgatcatatgaacaaatggagactggtggggagcgccaggatgccacagaaatcagagcat
+
+>seq2
+atgagtgacatcgaagccatggcgtctcaaggcaccaaacgatcatatgaacaaatggagactggtggggagcgccaggatgccacagaaatcagagcat
+----------------------------------------------------------------------------------------------------
+
