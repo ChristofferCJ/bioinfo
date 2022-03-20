@@ -1,4 +1,5 @@
 from typing import Callable, Optional
+from copy import deepcopy
 
 def sp_exact_3(
     A:          str,
@@ -109,6 +110,62 @@ def sp_exact_3(
         optimum = min(vals)
         dp[i][j][k] = optimum
         return optimum
+
+    def backtrack(i: int, j: int, k: int, acc: dict[str, str], alignments: list[dict[str, str]]) -> list[dict[str, str]]:
+        # check if dp table is filled out
+        for matrix in dp:
+            for row in matrix:
+                for item in row:
+                    assert item is not None
+        # base case
+        if i == 0 and j == 0 and k == 0:
+            return alignments + [acc]
+        # composites
+        res: list[dict[str, str]] = []
+        if i > 0 and j > 0 and k > 0 and dp[i][j][k] == (dp[i-1][j-1][k-1] + sum_of_pairs(A[i], B[j], C[k])):
+            copy = deepcopy(acc)
+            copy['A'] += A[i]
+            copy['B'] += B[j]
+            copy['C'] += C[k]
+            res += backtrack(i - 1, j - 1, k - 1, copy, alignments)
+        if i > 0 and j > 0 and k >= 0 and dp[i][j][k] == (dp[i-1][j-1][k] + sum_of_pairs(A[i], B[j], '-')):
+            copy = deepcopy(acc)
+            copy['A'] += A[i]
+            copy['B'] += B[j]
+            copy['C'] += '-'
+            res += backtrack(i - 1, j - 1, k, copy, alignments)
+        if i > 0 and j >= 0 and k > 0 and dp[i][j][k] == (dp[i-1][j][k-1] + sum_of_pairs(A[i], '-', C[k])):
+            copy = deepcopy(acc)
+            copy['A'] += A[i]
+            copy['B'] += '-'
+            copy['C'] += C[k]
+            res += backtrack(i - 1, j, k - 1, copy, alignments)
+        if i >= 0 and j > 0 and k > 0 and dp[i][j][k] == (dp[i][j-1][k-1] + sum_of_pairs('-', B[j], C[k])):
+            copy = deepcopy(acc)
+            copy['A'] += '-'
+            copy['B'] += B[j]
+            copy['C'] += C[k]
+            res += backtrack(i, j - 1, k - 1, copy, alignments)
+        if i > 0 and j >= 0 and k >= 0 and dp[i][j][k] == (dp[i-1][j][k] + sum_of_pairs(A[i], '-', '-')):
+            copy = deepcopy(acc)
+            copy['A'] += A[i]
+            copy['B'] += '-'
+            copy['C'] += '-'
+            res += backtrack(i - 1, j, k, copy, alignments)
+        if i >= 0 and j > 0 and k >= 0 and dp[i][j][k] == (dp[i][j-1][k] + sum_of_pairs('-', B[j], '-')):
+            copy = deepcopy(acc)
+            copy['A'] += '-'
+            copy['B'] += B[j]
+            copy['C'] += '-'
+            res += backtrack(i, j - 1, k, copy, alignments)
+        if i >= 0 and j >= 0 and k > 0 and dp[i][j][k] == (dp[i][j][k-1] + sum_of_pairs('-', '-', C[k])):
+            copy = deepcopy(acc)
+            copy['A'] += '-'
+            copy['B'] += B[j]
+            copy['C'] += '-'
+            res += backtrack(i, j - 1, k, copy, alignments)
+
+        return res
     
     # compute optimal score and fill out dynamic programming table
-    compute(len(A), len(B), len(C))
+    compute(len(A) - 1, len(B) - 1, len(C) - 1)
