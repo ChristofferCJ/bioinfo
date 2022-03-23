@@ -1,12 +1,13 @@
 from typing import Callable
 from global_pairwise_alignment import global_pairwise_alignment
+from copy import deepcopy
 
 def sp_approx(
     F:          list[str],
     cost:       list[list[float]],
     alphabet:   str,
     gap:        Callable[[int], float],
-):
+) -> tuple[float, list[str]]:
     # check if cost is a square matrix
     if len(cost[0]) != len(cost):
         raise Exception(f'Cost matrix with dimensions {len(cost[0])}x{len(cost)} is not square.')
@@ -45,12 +46,13 @@ def sp_approx(
     center_idx, center = find_center()
 
     # method to find all alignments from center sequence to all other sequences
-    def find_alignments() -> list[dict[str, str]]:
-        res = []
+    def find_alignments_and_cost() -> tuple[float, list[dict[str, str]]]:
+        alignments = []
+        cost = 0.0
         for idx, seq in enumerate(F):
             if idx == center_idx: # skip alignment with itself
                 continue
-            _, alignments = global_pairwise_alignment(
+            c, a = global_pairwise_alignment(
                     center,
                     seq,
                     cost,
@@ -58,13 +60,54 @@ def sp_approx(
                     'max', # change when parent method is parameterized with opt method
                     True
                 )
-            res.append(alignments[0])
-        return res
+            alignments.append(a[0])
+            cost += c
+        return cost, alignments
     
-    alignments = find_alignments()
+    cost, alignments = find_alignments_and_cost()
     
     M = [center]
 
     def extend(M: list[str], seq: dict[str, str]) -> list[str]:
+        MA = ['' for _ in range(len(M) + 1)]
         i = 0
         j = 0
+        i_max = len(M[0])
+        j_max = len(seq['a'])
+        while i < i_max or j < j_max:
+            c = M[0][i]
+            a = seq['a'][j]
+            b = seq['b'][j]
+            # case 1
+            if c == '-' and a == '-':
+                for idx, seq in enumerate(M):
+                    MA[idx] += seq[i]
+                MA[-1] += b
+                i += 1
+                j += 1
+            # case 2
+            elif c == '-' and a != '-':
+                for idx, seq in enumerate(M):
+                    MA[idx] += seq[i]
+                MA[-1] += '-'
+                i += 1
+            # case 3
+            elif c != '-' and a == '-':
+                for idx, _ in enumerate(M):
+                    MA[idx] += '-'
+                MA[-1] += b
+                j += 1
+            # case 4
+            elif c != '-' and a != '-':
+                for idx, seq in enumerate(M):
+                    MA[idx] += seq[i]
+                MA[-1] += b
+                i += 1
+                j += 1
+
+        return MA
+
+    for seq in alignments:
+        M = extend(M, seq)
+
+    return cost, M

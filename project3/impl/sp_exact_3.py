@@ -6,8 +6,8 @@ def sp_exact_3(
     B:          str,
     C:          str,
     cost:       list[list[float]],
-    alphabet:   str,
     gap:        Callable[[int], float],
+    alphabet:   str = 'ACGT'
 ):
     # check if cost is a square matrix
     if len(cost[0]) != len(cost):
@@ -42,6 +42,9 @@ def sp_exact_3(
                 row.append(None)
             entry.append(row)
         dp.append(entry)
+    assert len(dp) == len(A)
+    assert len(dp[0]) == len(B)
+    assert len(dp[0][0]) == len(C)
 
     # helper function to convert symbols to indices for cost matrix
     def convert(sym: str) -> int:
@@ -76,6 +79,7 @@ def sp_exact_3(
     
     def compute(i: int, j: int, k: int) -> float:
         # check dynamic programming table, and return if value is found
+        # print(i, j, k)
         v = dp[i][j][k]
         if v is not None:
             return v
@@ -93,7 +97,7 @@ def sp_exact_3(
             val = compute(i-1, j-1, k) + sum_of_pairs(a, b, '-')
             vals.append(val)
         if i > 0 and j >= 0 and k > 0:
-            val = compute(i-1, k, k-1) + sum_of_pairs(a, '-', c)
+            val = compute(i-1, j, k-1) + sum_of_pairs(a, '-', c)
             vals.append(val)
         if i >= 0 and j > 0 and k > 0:
             val = compute(i, j-1, k-1) + sum_of_pairs('-', b, c)
@@ -128,44 +132,48 @@ def sp_exact_3(
             copy['B'] += B[j]
             copy['C'] += C[k]
             res += backtrack(i - 1, j - 1, k - 1, copy, alignments)
-        if i > 0 and j > 0 and k >= 0 and dp[i][j][k] == (dp[i-1][j-1][k] + sum_of_pairs(A[i], B[j], '-')):
+        elif i > 0 and j > 0 and k >= 0 and dp[i][j][k] == (dp[i-1][j-1][k] + sum_of_pairs(A[i], B[j], '-')):
             copy = deepcopy(acc)
             copy['A'] += A[i]
             copy['B'] += B[j]
             copy['C'] += '-'
             res += backtrack(i - 1, j - 1, k, copy, alignments)
-        if i > 0 and j >= 0 and k > 0 and dp[i][j][k] == (dp[i-1][j][k-1] + sum_of_pairs(A[i], '-', C[k])):
+        elif i > 0 and j >= 0 and k > 0 and dp[i][j][k] == (dp[i-1][j][k-1] + sum_of_pairs(A[i], '-', C[k])):
             copy = deepcopy(acc)
             copy['A'] += A[i]
             copy['B'] += '-'
             copy['C'] += C[k]
             res += backtrack(i - 1, j, k - 1, copy, alignments)
-        if i >= 0 and j > 0 and k > 0 and dp[i][j][k] == (dp[i][j-1][k-1] + sum_of_pairs('-', B[j], C[k])):
+        elif i >= 0 and j > 0 and k > 0 and dp[i][j][k] == (dp[i][j-1][k-1] + sum_of_pairs('-', B[j], C[k])):
             copy = deepcopy(acc)
             copy['A'] += '-'
             copy['B'] += B[j]
             copy['C'] += C[k]
             res += backtrack(i, j - 1, k - 1, copy, alignments)
-        if i > 0 and j >= 0 and k >= 0 and dp[i][j][k] == (dp[i-1][j][k] + sum_of_pairs(A[i], '-', '-')):
+        elif i > 0 and j >= 0 and k >= 0 and dp[i][j][k] == (dp[i-1][j][k] + sum_of_pairs(A[i], '-', '-')):
             copy = deepcopy(acc)
             copy['A'] += A[i]
             copy['B'] += '-'
             copy['C'] += '-'
             res += backtrack(i - 1, j, k, copy, alignments)
-        if i >= 0 and j > 0 and k >= 0 and dp[i][j][k] == (dp[i][j-1][k] + sum_of_pairs('-', B[j], '-')):
+        elif i >= 0 and j > 0 and k >= 0 and dp[i][j][k] == (dp[i][j-1][k] + sum_of_pairs('-', B[j], '-')):
             copy = deepcopy(acc)
             copy['A'] += '-'
             copy['B'] += B[j]
             copy['C'] += '-'
             res += backtrack(i, j - 1, k, copy, alignments)
-        if i >= 0 and j >= 0 and k > 0 and dp[i][j][k] == (dp[i][j][k-1] + sum_of_pairs('-', '-', C[k])):
+        elif i >= 0 and j >= 0 and k > 0 and dp[i][j][k] == (dp[i][j][k-1] + sum_of_pairs('-', '-', C[k])):
             copy = deepcopy(acc)
             copy['A'] += '-'
             copy['B'] += B[j]
             copy['C'] += '-'
             res += backtrack(i, j - 1, k, copy, alignments)
-
         return res
     
     # compute optimal score and fill out dynamic programming table
-    compute(len(A) - 1, len(B) - 1, len(C) - 1)
+    optimum = compute(len(A) - 1, len(B) - 1, len(C) - 1)
+    # perform backtrack
+    alignments = backtrack(len(A) - 1, len(B) - 1, len(C) - 1, {'A': '', 'B': '', 'C': ''}, [])
+
+    return optimum, alignments
+
