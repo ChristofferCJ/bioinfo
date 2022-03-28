@@ -1,6 +1,6 @@
 import sys
-from project3.util import parse_fasta, valid_sequence, parse_cost, write_to_output_approx
-from project3.impl.sp_approx import sp_approx
+from util import parse_fasta, valid_sequence, parse_cost, write_to_output_approx
+from impl.sp_approx import sp_approx
 from typing import Any
 
 args = {
@@ -44,8 +44,6 @@ def parse_arg(arg: str):
             cost = parse_cost('cost_matrices/' + val)
             args['cost'] = cost
         case 'gapcost' | 'g':
-            if 'x' not in val:
-                raise Exception(f'Expression missing variable x: {val}')
             # test if expression is valid
             try:
                 x = 1

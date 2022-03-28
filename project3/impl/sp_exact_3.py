@@ -75,7 +75,7 @@ def sp_exact_3(
         a_idx = convert(a)
         b_idx = convert(b)
         c_idx = convert(c)
-        return cost[a_idx][b_idx] + cost[a_idx][b_idx] + cost[b_idx][c_idx]
+        return cost[a_idx][b_idx] + cost[a_idx][c_idx] + cost[b_idx][c_idx]
     
     def compute(i: int, j: int, k: int) -> float:
         # check dynamic programming table, and return if value is found
@@ -167,7 +167,7 @@ def sp_exact_3(
             copy['A'] += '-'
             copy['B'] += B[j]
             copy['C'] += '-'
-            res += backtrack(i, j - 1, k, copy, alignments)
+            res += backtrack(i, j, k - 1, copy, alignments)
         return res
     
     # compute optimal score and fill out dynamic programming table

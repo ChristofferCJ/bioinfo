@@ -31,17 +31,17 @@ def valid_sequence(seq: str) -> bool:
     return True
 
 
-def parse_cost(path: str) -> list[list[int]]:
+def parse_cost(path: str) -> list[list[float]]:
     try:
         file = open(path, 'r')
     except Exception:
         raise Exception(f'Unable to open cost file {path}')
     lines = file.readlines()
-    res: list[list[int]] = []
+    res: list[list[float]] = []
     for line in lines:
         if line.startswith('#'):
             continue
-        row = [int(num) for num in line.strip().split(' ')]
+        row = [float(num) for num in line.strip().split(' ')]
         res.append(row)
     return res
 
