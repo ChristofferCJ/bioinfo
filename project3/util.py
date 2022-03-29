@@ -11,6 +11,28 @@ def parse_fasta(path: str) -> str:
         res += line.strip().replace(' ', '')
     return res.strip()
 
+def parse_multiple_fasta(path: str) -> list[str]:
+    try:
+        file = open(path)
+    except:
+        raise Exception(f'Failed to open fasta from path {path}')
+    res = []
+    f = ''
+    first = True
+    lines = file.readlines()
+    for line in lines:
+        if line.startswith(';'):
+            continue
+        if line.startswith('>'):
+            if first:
+                first = False
+            else:
+                res.append(f)
+                f = ''
+            continue
+        f += line.strip().replace(' ', '')
+    res.append(f)
+    return res
 
 def parse_alignment(d: dict[str, str]) -> str:
     a = d['a'][::-1]
@@ -46,7 +68,7 @@ def parse_cost(path: str) -> list[list[float]]:
     return res
 
 
-def write_to_output(path: str, cost: int, alignments: list[dict[str, str]], idfk=True):
+def write_to_output(path: str, cost: float, alignments: list[dict[str, str]], idfk=True):
     try:
         file = open(path, 'w')
     except:
@@ -61,7 +83,7 @@ def write_to_output(path: str, cost: int, alignments: list[dict[str, str]], idfk
             text = parse_alignment3(alignment)
         file.write(text + '\n\n')
 
-def write_to_output_approx(path: str, cost: int, alignments: list[str]):
+def write_to_output_approx(path: str, cost: float, alignments: list[str]):
     try:
         file = open(path, 'w')
     except:

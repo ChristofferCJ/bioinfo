@@ -1,0 +1,15 @@
+Optimal cost of alignments: 1023.0
+
+Number of alignments: 1
+
+Alignments:
+>seq1
+aaggggggcgaagtagcccagtgcgttgctgggtatcacaacgcacctat-atc-tggtggacggtttcaaac-ac-caattca-aggta--tatag--atc-ctg-agc--ctagtatttagaggaccgtccagtacgaacagtagacctgccagtcgga-t-c
+
+>seq2
+ttgcatactgaaactgtac-ccctgtcggtaaacgct-taatgga-gaattgttatgggaaggaggtggaagttacgccgtaagcggataaatgtagctatccctacggcctctgg-gtttaaagt-ttagc-agca-ga-cagc-catatatgagtaataatgt
+
+>seq3
+--gaagagtggag--gtaagaagtgtaacctactcct-tagggttcgtat-gttcttgcgcacatctttagat-ac-cagtgga-gtgcag-tctggc-acc-ccaggac-actaacagcc-gagcgcc-tcgaggg-aatcggt-cacgt-tta-t-aca-tat
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
