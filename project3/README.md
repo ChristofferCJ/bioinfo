@@ -81,18 +81,18 @@ The goal of this assignment is to implement `sp_exact_3` and `sp_approx`, to com
 
 ## Methods
 ### sp_exact_3
-My implementation of `sp_exact_3` follows the outlined algorithm in the slides <a href="https://brightspace.au.dk/content/enforced/53951-LR8255/AiB_F2022_Slides/MSA.pdf">Multiple alignments</a>, pretty much to a T. Testing the algorithm with the input given in `testdata_short.txt` and `testdata_long.txt` gives the expected output. The output from these tests can be seen `here`
+My implementation of `sp_exact_3` follows the outlined algorithm in the slides <a href="https://brightspace.au.dk/content/enforced/53951-LR8255/AiB_F2022_Slides/MSA.pdf">Multiple alignments</a>, pretty much to a T. Testing the algorithm with the input given in `testdata_short.txt` and `testdata_long.txt` gives the expected output. The output from these tests can be seen <a href="https://github.com/ChristofferCJ/bioinfo/tree/main/project3/testdata_output">here</a>
 ### sp_approx
-My implementation of `sp_approx` follows the outlined algorithm in the slides <a href="https://brightspace.au.dk/content/enforced/53951-LR8255/AiB_F2022_Slides/SP-MSA-Approx.pdf">Approximating an optimal Sum-of-Pairs multiple alignment</a>. I use my implementation of `global_pairwise_alignment` from Project 1, to calculate the pairwise alignment and cost of 2 sequences in the `sp_approx` implementation. To test the implementation, I have run the same three sequences as in `testdata_long.txt`, and the output can be seen `here`
+My implementation of `sp_approx` follows the outlined algorithm in the slides <a href="https://brightspace.au.dk/content/enforced/53951-LR8255/AiB_F2022_Slides/SP-MSA-Approx.pdf">Approximating an optimal Sum-of-Pairs multiple alignment</a>. I use my implementation of `global_pairwise_alignment` from Project 1, to calculate the pairwise alignment and cost of 2 sequences in the `sp_approx` implementation. To test the implementation, I have run the same three sequences as in `testdata_long.txt`, and the output can be seen <a href="https://github.com/ChristofferCJ/bioinfo/blob/main/project3/output/sp_approx_testdatalong.txt">here</a>
 ## Experiments
 ### Experiment 1
-The results of running `sp_exact_3` on the first three sequences in `brca1-testseqs.fasta` can be seen `here`
+The results of running `sp_exact_3` on the first three sequences in `brca1-testseqs.fasta` can be seen <a href="https://github.com/ChristofferCJ/bioinfo/blob/main/project3/output/sp_approx_testdatalong.txt">here</a>
 
 ### Experiment 2
-The results of running `sp_approx` on the first five sequences in `brca1-testseqs.fasta` can be seen `here`
+The results of running `sp_approx` on the first five sequences in `brca1-testseqs.fasta` can be seen <a href="https://github.com/ChristofferCJ/bioinfo/blob/main/project3/experiments/sp_approx_experiment2.txt">here</a>
 
 ### Experiment 3
-The individual results of running `sp_exact_3` and `sp_approx` on the sequences in `testseqs.zip` can be seen `here`. \
+The individual results of running `sp_exact_3` and `sp_approx` on the sequences in `testseqs.zip` can be seen <a href="https://github.com/ChristofferCJ/bioinfo/tree/main/project3/experiments/experiment3">here</a>. \
 The approximation ratios for each of these results can be seen in the table below: \
 |  Sequence length|Approximation ratio|
 |-----------------|-------------------|
@@ -123,10 +123,10 @@ From the above table, we would expect an approximation ratio of 4/3, i.e. 1.33. 
 To compute the results seen below, I have used my implementation of `sp_approx` for all the different cases. I decided to use `sp_approx` for all cases, even though the first could be handled by `sp_exact_3` because I find it more interesting to compare results for different input to the same algorithm. \
 To test the running time and memory consumption of `sp_approx` I have used the `perf_counter` and `psutil` libraries respectively. I measure the currrent time and memory usage at the start of `sp_approx`, and measure it again at the end, to get the running time and memory consumption of the algorithm. \
 Running the test cases in the presentation gave the following results: \
-| Testcase|Score|Running time (sec)|Memory consumption (KB)|
-|---------|-----|------------------|-----------------------|
-| seqs 1-3|  402|1.5598689159960486|              10715.136|
-| seqs 1-4|  858|2.9263971250038594|              15859.712|
-| seqs 1-5|  897|4.660215500014601 |              17022.976|
-| seqs 1-6| 1357|6.821916417015018 |              21692.416|
-|full seqs|     |                  |                       |
+| Testcase|Score|    Running time (sec)|Memory consumption (KB)|
+|---------|-----|----------------------|-----------------------|
+| seqs 1-3|  402|    1.5598689159960486|              10715.136|
+| seqs 1-4|  858|    2.9263971250038594|              15859.712|
+| seqs 1-5|  897|    4.660215500014601 |              17022.976|
+| seqs 1-6| 1357|    6.821916417015018 |              21692.416|
+|full seqs|41663|13714.005886792002    |            2376466.432|
