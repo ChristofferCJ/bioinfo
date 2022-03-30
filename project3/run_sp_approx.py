@@ -2,6 +2,7 @@ import sys
 from util import parse_fasta, valid_sequence, parse_cost, write_to_output_approx
 from impl.sp_approx import sp_approx
 from typing import Any
+import psutil
 
 args = {
     'seq': []

@@ -8,7 +8,11 @@ git clone https://github.com/ChristofferCJ/bioinfo.git
 ```
 From here, navigate to the `project3` folder in a terminal, and run the following command:
 ```
-python run.py [ARGS]
+# for sp_exact_3
+python sp_exact_3.py [ARGS]
+
+# for sp_approx
+python sp_approx.py [ARGS]
 ```
 All arguments to the program is of the format `[IDENTIFIER]=[VALUE]`, and all possible identifiers and values are explained below. \
 Example usage:
@@ -114,3 +118,15 @@ The approximation ratios for each of these results can be seen in the table belo
 |              200| 1.6554621848739495|
 
 From the above table, we would expect an approximation ratio of 4/3, i.e. 1.33. The approximation ratios in the table are quite larger however, roughly around 1.66. This is a bit higher than expected.
+
+### Presentation
+To compute the results seen below, I have used my implementation of `sp_approx` for all the different cases. I decided to use `sp_approx` for all cases, even though the first could be handled by `sp_exact_3` because I find it more interesting to compare results for different input to the same algorithm. \
+To test the running time and memory consumption of `sp_approx` I have used the `perf_counter` and `psutil` libraries respectively. I measure the currrent time and memory usage at the start of `sp_approx`, and measure it again at the end, to get the running time and memory consumption of the algorithm. \
+Running the test cases in the presentation gave the following results: \
+| Testcase|Score|Running time (sec)|Memory consumption (KB)|
+|---------|-----|------------------|-----------------------|
+| seqs 1-3|  402|1.5598689159960486|              10715.136|
+| seqs 1-4|  858|2.9263971250038594|              15859.712|
+| seqs 1-5|  897|4.660215500014601 |              17022.976|
+| seqs 1-6| 1357|6.821916417015018 |              21692.416|
+|full seqs|     |                  |                       |

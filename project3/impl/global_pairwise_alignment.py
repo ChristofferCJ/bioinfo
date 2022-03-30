@@ -14,13 +14,14 @@ def global_pairwise_alignment(
     dp: list[list[Optional[float]]] = [[None for _ in b] for _ in a]
     # helper function to convert symbols to indices
     def convert(sym: str) -> int:
+        lookup = {'a':0, 'c':1, 'g':2, 't':3, 'n':0, 'r':0, 's':0}
         sym = sym.lower()
-        lookup = {
-            'a' : 0,
-            'c' : 1,
-            'g' : 2,
-            't' : 3
-        }
+        # lookup = {
+        #     'a' : 0,
+        #     'c' : 1,
+        #     'g' : 2,
+        #     't' : 3
+        # }
         return lookup[sym]
 
     def compute(i: int, j: int) -> float:

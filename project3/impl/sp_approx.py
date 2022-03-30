@@ -1,5 +1,7 @@
 from typing import Callable
 from impl.global_pairwise_alignment import global_pairwise_alignment
+import psutil
+from time import perf_counter
 
 def sp_approx(
     F:          list[str],
@@ -7,6 +9,8 @@ def sp_approx(
     gap:        Callable[[int], float],
     alphabet:   str = 'ACGT'
 ) -> tuple[float, list[str]]:
+    mem_before = psutil.Process().memory_info().rss
+    time_before = perf_counter()
     # check if cost is a square matrix
     if len(cost[0]) != len(cost):
         raise Exception(f'Cost matrix with dimensions {len(cost[0])}x{len(cost)} is not square.')
@@ -15,11 +19,12 @@ def sp_approx(
     if len(set(alphabet)) != len(alphabet):
         raise Exception(f'Alphabet \'{alphabet}\' has duplicates.')
 
-    # check if alphabet matches square matrix
-    if len(alphabet) != len(cost):
-        raise Exception(f'Alphabet size ({len(alphabet)}) does not match length ({len(cost)}) of cost matrix.')
+    # # check if alphabet matches square matrix
+    # if len(alphabet) != len(cost):
+    #     raise Exception(f'Alphabet size ({len(alphabet)}) does not match length ({len(cost)}) of cost matrix.')
     
     # method to find center string
+    print('Finding center')
     def find_center() -> tuple[int, str]:
         opt_idx = -1
         opt = -1.0
@@ -35,6 +40,7 @@ def sp_approx(
                     gap=gap
                 )
                 sum += score
+                print(f'Finished running global_pairwise_alignemnt for {idx} and {other_idx}')
             if sum < opt or opt_idx == -1:
                 opt_idx = idx
                 opt = sum
@@ -42,6 +48,7 @@ def sp_approx(
     
     center_idx, center = find_center()
 
+    print('Finding alignments with center string')
     # method to find all alignments from center sequence to all other sequences
     def find_alignments_and_cost() -> tuple[float, list[dict[str, str]]]:
         alignments = []
@@ -55,6 +62,7 @@ def sp_approx(
                     cost,
                     gap,
                 )
+            print(f'Finished finding alignment for {idx} with center string')
             alignments.append(a[0])
             total_cost += c
         return total_cost, alignments
@@ -62,7 +70,7 @@ def sp_approx(
     optimum_cost, alignments = find_alignments_and_cost()
     
     M = [center]
-
+    print('Extending M')
     def extend(M: list[str], seq: dict[str, str]) -> list[str]:
         MA = ['' for _ in range(len(M) + 1)]
         i = 0
@@ -105,7 +113,15 @@ def sp_approx(
 
         return MA
 
-    for seq in alignments:
+    for idx, seq in enumerate(alignments):
         M = extend(M, seq)
-
+        print(f'Finished finding for {idx}')
+    mem_after = psutil.Process().memory_info().rss
+    time_after = perf_counter()
+    mem = mem_after - mem_before
+    time = time_after - time_before
+    print(f"""
+        Running time (sec): {time}
+        Memory consumption (bytes): {mem}
+    """)
     return optimum_cost, M
