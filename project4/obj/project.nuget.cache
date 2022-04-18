@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "ISdaVYmHf6CxR+lhuuz5gSmYUY0C/ZvKyPIoDmsiriIwlS94G6pKMzfBogMxIRwF7uqXtlkmVREINzrZNqCfyQ==",
+  "success": true,
+  "projectFilePath": "/Users/christoffer/code/bioinfo/project4/project4.csproj",
+  "expectedPackageFiles": [
+    "/Users/christoffer/.nuget/packages/netbio.core/3.0.0-alpha/netbio.core.3.0.0-alpha.nupkg.sha512"
+  ],
+  "logs": []
+}

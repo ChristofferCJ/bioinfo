@@ -1,0 +1,31 @@
+﻿<Properties StartupConfiguration="{3BFF8265-E836-4FD6-8F43-183923CA4CAB}|Default">
+  <MonoDevelop.Ide.ItemProperties.project4 PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="ArgumentParser.cs">
+    <Files>
+      <File FileName="Program.cs" Line="10" Column="41" />
+      <File FileName="Implementations/IImplementation.cs" Line="7" Column="47" />
+      <File FileName="Implementations/Day.cs" Line="41" Column="33" />
+      <File FileName="Parser.cs" Line="25" Column="6" />
+      <File FileName="ArgumentParser.cs" Line="6" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="project4" expanded="True">
+            <Node name="project4" expanded="True">
+              <Node name="Data" expanded="True" />
+              <Node name="Implementations" expanded="True" />
+              <Node name="ArgumentParser.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

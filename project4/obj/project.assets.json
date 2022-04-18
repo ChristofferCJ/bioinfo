@@ -1,0 +1,96 @@
+{
+  "version": 3,
+  "targets": {
+    "net5.0": {
+      "NetBio.Core/3.0.0-alpha": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Bio.Core.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Bio.Core.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "NetBio.Core/3.0.0-alpha": {
+      "sha512": "RcyiZYcdAAjOUtVW64sDVgMX5ZfcnqJRbjnuF9mAe8NWsQIWsoo5B1c64Ij56IsCxmFashSqZq1csOMlOGN/iw==",
+      "type": "package",
+      "path": "netbio.core/3.0.0-alpha",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/Bio.Core.dll",
+        "netbio.core.3.0.0-alpha.nupkg.sha512",
+        "netbio.core.nuspec"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net5.0": [
+      "NetBio.Core >= 3.0.0-alpha"
+    ]
+  },
+  "packageFolders": {
+    "/Users/christoffer/.nuget/packages/": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "/Users/christoffer/code/bioinfo/project4/project4.csproj",
+      "projectName": "project4",
+      "projectPath": "/Users/christoffer/code/bioinfo/project4/project4.csproj",
+      "packagesPath": "/Users/christoffer/.nuget/packages/",
+      "outputPath": "/Users/christoffer/code/bioinfo/project4/obj/",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "/Users/christoffer/.config/NuGet/NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net5.0"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net5.0": {
+        "targetAlias": "net5.0",
+        "dependencies": {
+          "NetBio.Core": {
+            "target": "Package",
+            "version": "[3.0.0-alpha, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/x64/sdk/6.0.104/RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

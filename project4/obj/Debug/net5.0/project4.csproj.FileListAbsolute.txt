@@ -1,0 +1,17 @@
+/Users/christoffer/code/bioinfo/project4/bin/Debug/net5.0/project4.deps.json
+/Users/christoffer/code/bioinfo/project4/bin/Debug/net5.0/project4.runtimeconfig.json
+/Users/christoffer/code/bioinfo/project4/bin/Debug/net5.0/project4.runtimeconfig.dev.json
+/Users/christoffer/code/bioinfo/project4/bin/Debug/net5.0/project4.dll
+/Users/christoffer/code/bioinfo/project4/bin/Debug/net5.0/ref/project4.dll
+/Users/christoffer/code/bioinfo/project4/bin/Debug/net5.0/project4.pdb
+/Users/christoffer/code/bioinfo/project4/bin/Debug/net5.0/Bio.Core.dll
+/Users/christoffer/code/bioinfo/project4/obj/Debug/net5.0/project4.csproj.AssemblyReference.cache
+/Users/christoffer/code/bioinfo/project4/obj/Debug/net5.0/project4.GeneratedMSBuildEditorConfig.editorconfig
+/Users/christoffer/code/bioinfo/project4/obj/Debug/net5.0/project4.AssemblyInfoInputs.cache
+/Users/christoffer/code/bioinfo/project4/obj/Debug/net5.0/project4.AssemblyInfo.cs
+/Users/christoffer/code/bioinfo/project4/obj/Debug/net5.0/project4.csproj.CoreCompileInputs.cache
+/Users/christoffer/code/bioinfo/project4/obj/Debug/net5.0/project4.csproj.CopyComplete
+/Users/christoffer/code/bioinfo/project4/obj/Debug/net5.0/project4.dll
+/Users/christoffer/code/bioinfo/project4/obj/Debug/net5.0/ref/project4.dll
+/Users/christoffer/code/bioinfo/project4/obj/Debug/net5.0/project4.pdb
+/Users/christoffer/code/bioinfo/project4/obj/Debug/net5.0/project4.genruntimeconfig.cache
