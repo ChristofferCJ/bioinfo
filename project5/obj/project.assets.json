@@ -1,0 +1,126 @@
+{
+  "version": 3,
+  "targets": {
+    "net6.0": {
+      "Bio.NET/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net40/Bio.Comparative.dll": {},
+          "lib/net40/Bio.Padena.dll": {},
+          "lib/net40/Bio.Pamsam.dll": {},
+          "lib/net40/Bio.WebServiceHandlers.dll": {},
+          "lib/net40/Bio.dll": {}
+        },
+        "runtime": {
+          "lib/net40/Bio.Comparative.dll": {},
+          "lib/net40/Bio.Padena.dll": {},
+          "lib/net40/Bio.Pamsam.dll": {},
+          "lib/net40/Bio.WebServiceHandlers.dll": {},
+          "lib/net40/Bio.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Bio.NET/1.0.0": {
+      "sha512": "hJbP2bcUr2VUkcbtqSloIrE2om1FrzUeTbq4d+yB9PxLMHpx2XM3gHDDdZhh297gL4VNQjQT1YiVpvNyngWoqQ==",
+      "type": "package",
+      "path": "bio.net/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "bio.net.1.0.0.nupkg.sha512",
+        "bio.net.nuspec",
+        "lib/net40/Bio.Comparative.dll",
+        "lib/net40/Bio.Padena.dll",
+        "lib/net40/Bio.Pamsam.dll",
+        "lib/net40/Bio.WebServiceHandlers.dll",
+        "lib/net40/Bio.dll"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net6.0": [
+      "Bio.NET >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "/home/christoffer/.nuget/packages/": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "/home/christoffer/code/bioinfo/project5/project5.csproj",
+      "projectName": "project5",
+      "projectPath": "/home/christoffer/code/bioinfo/project5/project5.csproj",
+      "packagesPath": "/home/christoffer/.nuget/packages/",
+      "outputPath": "/home/christoffer/code/bioinfo/project5/obj/",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "/home/christoffer/.nuget/NuGet/NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net6.0"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net6.0": {
+        "targetAlias": "net6.0",
+        "dependencies": {
+          "Bio.NET": {
+            "target": "Package",
+            "version": "[1.0.0, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[6.0.2, 6.0.2]"
+          }
+        ],
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.102/RuntimeIdentifierGraph.json"
+      }
+    }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Bio.NET 1.0.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Bio.NET",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
+}
