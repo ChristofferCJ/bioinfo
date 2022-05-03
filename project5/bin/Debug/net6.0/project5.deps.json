@@ -1,0 +1,57 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "project5/1.0.0": {
+        "dependencies": {
+          "Bio.NET": "1.0.0"
+        },
+        "runtime": {
+          "project5.dll": {}
+        }
+      },
+      "Bio.NET/1.0.0": {
+        "runtime": {
+          "lib/net40/Bio.Comparative.dll": {
+            "assemblyVersion": "1.0.4300.28710",
+            "fileVersion": "1.0.0.0"
+          },
+          "lib/net40/Bio.Padena.dll": {
+            "assemblyVersion": "1.0.4300.28652",
+            "fileVersion": "1.0.0.0"
+          },
+          "lib/net40/Bio.Pamsam.dll": {
+            "assemblyVersion": "1.0.4300.28655",
+            "fileVersion": "1.0.0.0"
+          },
+          "lib/net40/Bio.WebServiceHandlers.dll": {
+            "assemblyVersion": "1.0.4300.28659",
+            "fileVersion": "1.0.0.0"
+          },
+          "lib/net40/Bio.dll": {
+            "assemblyVersion": "1.0.4300.28638",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "project5/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Bio.NET/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-hJbP2bcUr2VUkcbtqSloIrE2om1FrzUeTbq4d+yB9PxLMHpx2XM3gHDDdZhh297gL4VNQjQT1YiVpvNyngWoqQ==",
+      "path": "bio.net/1.0.0",
+      "hashPath": "bio.net.1.0.0.nupkg.sha512"
+    }
+  }
+}
