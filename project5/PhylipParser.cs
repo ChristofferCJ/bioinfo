@@ -4,25 +4,28 @@ using System.Globalization;
 
 static class PhylipParser
 {
-    public static List<List<float>> FromFile(string filePath)
+    public static (List<string>, List<List<float>>) FromFile(string filePath)
     {
-        var lines = File.ReadAllLines(filePath);
+        var lines = File.ReadAllLines("PhylipFiles/" + filePath);
         var lineCount = int.Parse(lines[0].Trim());
 
-        List<List<float>> result = new();
+        List<string> names = new();
+        List<List<float>> distanceMatrix = new();
         for (int i = 1; i <= lineCount; i++)
         {
             List<float> row = new();
             var line = lines[i];
             var lst = line.Split(' ');
+            var name = lst[0];
+            names.Add(name);
             for (int j = 1; j <= lineCount; j++)
             {
                 var entry = lst[j];
                 row.Add(float.Parse(entry.Trim(), CultureInfo.InvariantCulture.NumberFormat));
             }
-            result.Add(row);
+            distanceMatrix.Add(row);
         }
-        return result;
+        return (names, distanceMatrix);
     }
 
     public static List<List<float>> Test()

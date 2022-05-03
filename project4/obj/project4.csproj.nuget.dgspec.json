@@ -1,30 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "/Users/christoffer/code/bioinfo/project4/project4.csproj": {}
+    "/home/christoffer/code/bioinfo/project4/project4.csproj": {}
   },
   "projects": {
-    "/Users/christoffer/code/bioinfo/project4/project4.csproj": {
+    "/home/christoffer/code/bioinfo/project4/project4.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/christoffer/code/bioinfo/project4/project4.csproj",
+        "projectUniqueName": "/home/christoffer/code/bioinfo/project4/project4.csproj",
         "projectName": "project4",
-        "projectPath": "/Users/christoffer/code/bioinfo/project4/project4.csproj",
-        "packagesPath": "/Users/christoffer/.nuget/packages/",
-        "outputPath": "/Users/christoffer/code/bioinfo/project4/obj/",
+        "projectPath": "/home/christoffer/code/bioinfo/project4/project4.csproj",
+        "packagesPath": "/home/christoffer/.nuget/packages/",
+        "outputPath": "/home/christoffer/code/bioinfo/project4/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/christoffer/.config/NuGet/NuGet.Config"
+          "/home/christoffer/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "net5.0"
+          "net6.0"
         ],
         "sources": {
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net5.0": {
-            "targetAlias": "net5.0",
+          "net6.0": {
+            "targetAlias": "net6.0",
             "projectReferences": {}
           }
         },
@@ -35,8 +35,8 @@
         }
       },
       "frameworks": {
-        "net5.0": {
-          "targetAlias": "net5.0",
+        "net6.0": {
+          "targetAlias": "net6.0",
           "dependencies": {
             "NetBio.Core": {
               "target": "Package",
@@ -53,12 +53,18 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.2, 6.0.2]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/x64/sdk/6.0.104/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.102/RuntimeIdentifierGraph.json"
         }
       }
     }
