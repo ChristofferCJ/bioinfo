@@ -28,32 +28,59 @@ namespace project4.Implementations
             var bIntervals = FindIntervals(b.Root);
 
             // Step 5: Compare intervals and count doublets
-            var result = CompareIntervals(aIntervals, bIntervals);
+            var doublets = CompareIntervals(aIntervals, bIntervals);
+            var rf = ComputeRF(doublets, aIntervals, bIntervals);
+            return rf;
+        }
 
-            return result;
+        private int ComputeRF(int doublets, HashSet<List<int>> aIntervals, HashSet<List<int>> bIntervals)
+        {
+            var aSplits = aIntervals.Count;
+            var bSplits = bIntervals.Count;
+            return (aSplits + bSplits) - 2 * doublets;
+        }
+
+        private void PrintInterval(List<int> interval)
+        {
+            var stringInterval = interval.Select(v => v.ToString());
+            var str = String.Join(',', stringInterval);
+            System.Console.WriteLine(str);
         }
 
         private int CompareIntervals(HashSet<List<int>> a, HashSet<List<int>> b)
         {
-            var preAIntervalsSize = a.Count;
-            foreach (var interval in b)
+            List<string> aStr = new();
+            foreach(var interval in a)
             {
-                a.Add(interval);
+                interval.Sort();
+                var str = String.Join(',', interval.Select(v => v.ToString()));
+                aStr.Add(str);
             }
-            var postAIntervalsSize = b.Count;
-            var deltaSize = postAIntervalsSize - preAIntervalsSize;
-            var doublets = b.Count - deltaSize;
+            List<string> bStr = new();
+            foreach(var interval in b)
+            {
+                interval.Sort();
+                var str = String.Join(',', interval.Select(v => v.ToString()));
+                bStr.Add(str);
+            }
+
+            int doublets = 0;
+            foreach(var interval in aStr)
+            {
+                if(bStr.Contains(interval))
+                    doublets++;
+            }
 
             return doublets;
         }
 
         private void CreateOrderingOfLeaves(Tree tree)
         {
-            var ord = 0;
+            var ord = 1;
             Inner(tree.Root);
             void Inner(Node curr)
             {
-                if(!String.IsNullOrEmpty(curr.Name)) // Check if node is leaf
+                if(curr.IsLeaf)
                     Ordering.Add(curr.Name.Trim(), ord++);
                 foreach(var (node, _) in curr.Children ?? new Dictionary<Node, Edge>())
                     Inner(node);
@@ -64,13 +91,8 @@ namespace project4.Implementations
         {
             // Find first leaf
             var leaf = tree.Root;
-            while (true)
-            {
-                if(!String.IsNullOrEmpty(leaf.Name))
-                    break;
-                var keyList = leaf.Children.Select(k => k.Key).ToList();
-                leaf = keyList[0];
-            }
+            while (!leaf.IsLeaf)
+                leaf = leaf.Nodes[0];
             var leafRootedTree = ChangeRoot(tree, leaf);
             return leafRootedTree;
         }
@@ -88,7 +110,8 @@ namespace project4.Implementations
                 prev.Children.Remove(curr);
                 curr.Children.Add(prev, edge);
             }
-            tree.Root = newRoot;
+            
+            tree.Root = branch[branch.Count - 1];
             tree.Root.IsRoot = true;
             return tree;
         }
@@ -110,7 +133,6 @@ namespace project4.Implementations
                 if (found)
                     return (true, branch);
             }
-
             return (false, new() { curr });
         }
 
