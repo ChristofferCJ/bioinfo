@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/christoffer/code/bioinfo/project4/project4.csproj": {}
+    "/Users/changtrakul/code/bioinfo/project4/project4.csproj": {}
   },
   "projects": {
-    "/Users/christoffer/code/bioinfo/project4/project4.csproj": {
+    "/Users/changtrakul/code/bioinfo/project4/project4.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/christoffer/code/bioinfo/project4/project4.csproj",
+        "projectUniqueName": "/Users/changtrakul/code/bioinfo/project4/project4.csproj",
         "projectName": "project4",
-        "projectPath": "/Users/christoffer/code/bioinfo/project4/project4.csproj",
-        "packagesPath": "/Users/christoffer/.nuget/packages/",
-        "outputPath": "/Users/christoffer/code/bioinfo/project4/obj/",
+        "projectPath": "/Users/changtrakul/code/bioinfo/project4/project4.csproj",
+        "packagesPath": "/Users/changtrakul/.nuget/packages/",
+        "outputPath": "/Users/changtrakul/code/bioinfo/project4/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/christoffer/.config/NuGet/NuGet.Config"
+          "/Users/changtrakul/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -53,12 +53,26 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.osx-x64",
+              "version": "[5.0.16, 5.0.16]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/x64/sdk/6.0.104/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.202/RuntimeIdentifierGraph.json"
         }
       }
     }

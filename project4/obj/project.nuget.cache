@@ -1,10 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "ISdaVYmHf6CxR+lhuuz5gSmYUY0C/ZvKyPIoDmsiriIwlS94G6pKMzfBogMxIRwF7uqXtlkmVREINzrZNqCfyQ==",
+  "dgSpecHash": "tB85w8brFhTYOkQSyAtvBf35vAt8VJB0LXdsUrdWCqVaPW8vibqTB8pf5U0f8knPbZMLdL4oCupJ/c5gt8mbmQ==",
   "success": true,
-  "projectFilePath": "/Users/christoffer/code/bioinfo/project4/project4.csproj",
+  "projectFilePath": "/Users/changtrakul/code/bioinfo/project4/project4.csproj",
   "expectedPackageFiles": [
-    "/Users/christoffer/.nuget/packages/netbio.core/3.0.0-alpha/netbio.core.3.0.0-alpha.nupkg.sha512"
+    "/Users/changtrakul/.nuget/packages/netbio.core/3.0.0-alpha/netbio.core.3.0.0-alpha.nupkg.sha512",
+    "/Users/changtrakul/.nuget/packages/microsoft.netcore.app.ref/5.0.0/microsoft.netcore.app.ref.5.0.0.nupkg.sha512",
+    "/Users/changtrakul/.nuget/packages/microsoft.aspnetcore.app.ref/5.0.0/microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512",
+    "/Users/changtrakul/.nuget/packages/microsoft.netcore.app.host.osx-x64/5.0.16/microsoft.netcore.app.host.osx-x64.5.0.16.nupkg.sha512"
   ],
   "logs": []
 }
