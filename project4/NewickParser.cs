@@ -11,7 +11,7 @@ namespace project4
             Stream stream;
             try
             {
-                stream = File.OpenRead($"Data/{path}"); // This is smart
+                stream = File.OpenRead($"Data/{path}");
             }
             catch
             {
