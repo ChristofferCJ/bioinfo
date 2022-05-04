@@ -3,6 +3,7 @@ namespace Implementation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Diagnostics;
 using Bio.Phylogenetics;
 
 // https://brightspace.au.dk/content/enforced/53951-LR8255/AiB_F2022_Slides/UPGMA_NJ.pdf
@@ -28,14 +29,36 @@ static class SaitouNei
             throw new ArgumentException($"{nameof(distanceMatrix)} has to be a square matrix of at least size 3.");
         var taxaSet = CreateTaxaSet(n);
 
+        var iter = 1;
+        var stopwatch = new Stopwatch();
         while (taxaSet.Count > 3)
         {
+            stopwatch.Start();  
+            System.Console.WriteLine($"Iteration {iter}");
+            var preTaxaSetSize = taxaSet.Count;
             var N = ComputeN(distanceMatrix, taxaSet);
+            var computeNTime = stopwatch.ElapsedMilliseconds;
+            System.Console.WriteLine($"Computed matrix N from distance matrix, took {computeNTime} ms");
             var (minI, minJ) = FindMinimalEntryInN(N, taxaSet);
+            var findMinimalEntryInNTime = stopwatch.ElapsedMilliseconds;
+            System.Console.WriteLine($"Found minimal entry in N, took {findMinimalEntryInNTime - computeNTime} ms");
             ComputeWeightsAndAddNodes(minI, minJ, distanceMatrix, taxaSet);
+            var computeWeightsAndAddNodesTime = stopwatch.ElapsedMilliseconds;
+            System.Console.WriteLine($"Computed weights and added nodes, took {computeWeightsAndAddNodesTime - findMinimalEntryInNTime} ms");
             distanceMatrix = UpdateDistanceMatrix(minI, minJ, distanceMatrix);
+            var updateDistanceMatrixTime = stopwatch.ElapsedMilliseconds;
+            System.Console.WriteLine($"Updated distance matrix, took {updateDistanceMatrixTime - computeWeightsAndAddNodesTime} ms");
             taxaSet = UpdateTaxaSet(taxaSet, minI, minJ, kCounter);
+            var updateTaxaSetTime = stopwatch.ElapsedMilliseconds;
+            System.Console.WriteLine($"Updated taxa set, took {updateTaxaSetTime - updateDistanceMatrixTime} ms");
+            var postTaxaSetSize = taxaSet.Count;
+            if (preTaxaSetSize >= postTaxaSetSize)
+                System.Console.WriteLine($"preTaxaSetSize: {preTaxaSetSize}, postTaxaSetSize: {postTaxaSetSize}");
+            else
+                System.Console.WriteLine($"postTaxaSetSize: {postTaxaSetSize}");
             kCounter++;
+            iter++;
+            stopwatch.Reset();
         }
         var taxaList = taxaSet.ToList();
         if (taxaList.Count != 3)
@@ -167,8 +190,9 @@ static class SaitouNei
                 jNode.Name = Names[minJ];
             else jNode.Name = "";
         }
-        var rI = CalculateR(distanceMatrix, taxaSet, minI);
-        var rJ = CalculateR(distanceMatrix, taxaSet, minJ);
+        var fractionCoefficient = CalculateFractionCoefficient(taxaSet);
+        var rI = CalculateR(distanceMatrix, taxaSet, minI, fractionCoefficient);
+        var rJ = CalculateR(distanceMatrix, taxaSet, minJ, fractionCoefficient);
         var iWeight = (float) (.5 * (distanceMatrix[minI][minJ] + rI - rJ));
         var jWeight = (float) (.5 * (distanceMatrix[minI][minJ] + rJ - rI));
         var iEdge = new Edge();
@@ -204,19 +228,20 @@ static class SaitouNei
         return set;
     }
 
-    private static List<List<float>> ComputeN(List<List<float>> distanceMatrix, HashSet<int> taxaSet)
+    private static List<List<float>>   ComputeN(List<List<float>> distanceMatrix, HashSet<int> taxaSet)
     {
         var n = distanceMatrix.Count;
+        var fractionCoefficient = CalculateFractionCoefficient(taxaSet);
         var N = InitializeN(n);
         for (int i = 0; i < n; i++)
         {
+            var rI = CalculateR(distanceMatrix, taxaSet, i, fractionCoefficient);
             for (int j = 0; j < n; j++)
             {
                 if (i == j)
                     continue;
                 var dIJ = distanceMatrix[i][j];
-                var rI = CalculateR(distanceMatrix, taxaSet, i);
-                var rJ = CalculateR(distanceMatrix, taxaSet, j);
+                var rJ = CalculateR(distanceMatrix, taxaSet, j, fractionCoefficient);
                 var nIJ = dIJ - (rI + rJ);
                 N[i][j] = nIJ;
             }
@@ -224,9 +249,12 @@ static class SaitouNei
         return N;
     }
 
-    private static float CalculateR(List<List<float>> distanceMatrix, HashSet<int> taxaSet, int idx)
+    private static float CalculateR(
+        List<List<float>> distanceMatrix,
+        HashSet<int> taxaSet,
+        int idx,
+        float fractionCoefficient)
     {
-        var fractionCoefficient = CalculateFractionCoefficient(taxaSet);
         float taxaSetSum = 0f;
         foreach(var taxa in taxaSet)
         {

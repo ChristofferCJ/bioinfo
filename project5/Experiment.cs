@@ -14,8 +14,11 @@ static class Experiment
             System.Console.WriteLine($"Running test for {fileWithoutDirectory}");
             timer.Start();
             var (names, distanceMatrix) = PhylipParser.FromFile(fileWithoutDirectory);
+            System.Console.WriteLine("Parsed phylip file to distance matrix and names");
             var tree = SaitouNei.ToNewickFormat(names, distanceMatrix);
+            System.Console.WriteLine("Converted distance matrix to newick format");
             NewickFormatter.ToFile(fileWithoutDirectory, tree);
+            System.Console.WriteLine("Wrote newick format to file");
             timer.Stop();
             var timeInMs = timer.ElapsedMilliseconds;
             System.Console.WriteLine($"Result for {fileWithoutDirectory}: {timeInMs} ms");
