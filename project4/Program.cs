@@ -6,8 +6,8 @@ namespace project4
     {
         static void Main(string[] args)
         {
-            var tree1Path = "clustal_omega_quicktree.new";
-            var tree2Path = "clustal_omega_rapidnj.new";
+            var tree1Path = "rapidnj-muscle.new";
+            var tree2Path = "rapidnj-clustal-omega.new";
 
             var tree1 = NewickParser.FromFile(tree1Path);
             var tree2 = NewickParser.FromFile(tree2Path);

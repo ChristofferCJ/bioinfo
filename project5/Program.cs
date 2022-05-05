@@ -4,7 +4,7 @@
 var (names, distanceMatrix) = PhylipParser.FromFile("1849_FG-GAP.phy");
 
 
-var saitouNei = new SaitouNeiNew(names, distanceMatrix);
+var saitouNei = new SaitouNei(names, distanceMatrix);
 var tree = saitouNei.ToTree(true);
 
 // Write the name of the output Newick file you want to write the output to, as an argument to the function below

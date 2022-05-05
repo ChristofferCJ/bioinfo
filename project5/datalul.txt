@@ -1,0 +1,120 @@
+QuickTree
+------------------------------------------------------------
+89_Adeno_E3_CR1.phy
+Executed in 2.1 ms
+
+214_Arena_glycoprot.phy
+Executed in 9.2 ms
+
+304_A1_Propetide.phy
+Executed in 20 ms
+
+401_DDE.phy
+Executed in 36.6 ms
+
+494_Astro_capsid.phy
+Executed in 45.3 ms
+
+608_Gemini_AL2.phy
+Executed in 82.5 ms
+
+777_Gemini_V1.phy
+Executed in 168.7 ms
+
+877_Glu_synthase.phy
+Executed in 258.3 ms
+
+1347_FAINT.phy
+Executed in 1170 ms
+
+1493_Fe-ADH.phy
+Executed in 1360 ms
+
+1560_Ferritin.phy
+Executed in 1600 ms
+
+1689_FGGY_N.phy
+Executed in 1840 ms
+
+1756_FAD_binding_3.phy
+Executed in 2020 ms
+
+1849_FG-GAP.phy
+Executed in 2610 ms
+
+RapidNJ
+---------------------------------------------
+89_Adeno_E3_CR1.phy
+Executed in 2.9 ms
+
+214_Arena_glycoprot.phy
+Executed in 8.06 ms
+
+304_A1_Propetide.phy
+Executed in 15.22 ms
+
+401_DDE.phy
+Executed in 24.75 ms
+
+494_Astro_capsid.phy
+Executed in 30.72 ms
+
+608_Gemini_AL2.phy
+Executed in 60.33 ms
+
+777_Gemini_V1.phy
+Executed in 81.58 ms
+
+877_Glu_synthase.phy
+Executed in 118.28 ms
+
+1347_FAINT.phy
+Executed in 314.94 ms
+
+1493_Fe-ADH.phy
+Executed in 362.99 ms
+
+1560_Ferritin.phy
+Executed in 368.51 ms
+
+1689_FGGY_N.phy
+Executed in 462.16 ms
+
+1756_FAD_binding_3.phy
+Executed in 525.52 ms
+
+1849_FG-GAP.phy
+Executed in 512.91 ms
+
+
+
+My own crap
+---------------------------------------------
+Running test for 1347_FAINT.phy
+Result for 1347_FAINT.phy: 81325 ms
+Running test for 89_Adeno_E3_CR1.phy
+Result for 89_Adeno_E3_CR1.phy: 27 ms
+Running test for 304_A1_Propeptide.phy
+Result for 304_A1_Propeptide.phy: 898 ms
+Running test for 1756_FAD_binding_3.phy
+Result for 1756_FAD_binding_3.phy: 191122 ms
+Running test for 214_Arena_glycoprot.phy
+Result for 214_Arena_glycoprot.phy: 306 ms
+Running test for 608_Gemini_AL2.phy
+Result for 608_Gemini_AL2.phy: 7437 ms
+Running test for 1849_FG-GAP.phy
+Result for 1849_FG-GAP.phy: 220408 ms
+Running test for 877_Glu_synthase.phy
+Result for 877_Glu_synthase.phy: 21216 ms
+Running test for 494_Astro_capsid.phy
+Result for 494_Astro_capsid.phy: 3840 ms
+Running test for 1560_Ferritin.phy
+Result for 1560_Ferritin.phy: 130759 ms
+Running test for 1493_Fe-ADH.phy
+Result for 1493_Fe-ADH.phy: 114834 ms
+Running test for 777_Gemini_V1.phy
+Result for 777_Gemini_V1.phy: 15373 ms
+Running test for 1689_FGGY_N.phy
+Result for 1689_FGGY_N.phy: 169392 ms
+Running test for 401_DDE.phy
+Result for 401_DDE.phy: 2111 ms

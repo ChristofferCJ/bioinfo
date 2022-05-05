@@ -80,9 +80,12 @@ namespace project4.Implementations
             Inner(tree.Root);
             void Inner(Node curr)
             {
-                if(curr.IsLeaf)
-                    Ordering.Add(curr.Name.Trim(), ord++);
-                foreach(var (node, _) in curr.Children ?? new Dictionary<Node, Edge>())
+                if(!String.IsNullOrEmpty(curr.Name))
+                {
+                    var trimmedName = curr.Name.Replace("'", "").Trim();
+                    Ordering.Add(trimmedName, ord++);
+                }
+                foreach(var node in curr.Nodes ?? new List<Node>())
                     Inner(node);
             }
         }
@@ -167,7 +170,8 @@ namespace project4.Implementations
                 // Leaf
                 else
                 {
-                    var order = Ordering[child.Name.Trim()];
+                    var trimmedName = child.Name.Replace("'", "").Trim();
+                    var order = Ordering[trimmedName];
                     interval.Add(order);
                 }
             }

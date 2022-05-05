@@ -45,19 +45,19 @@
     ]
   },
   "packageFolders": {
-    "/Users/changtrakul/.nuget/packages/": {}
+    "/home/christoffer/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/changtrakul/code/bioinfo/project5/project5.csproj",
+      "projectUniqueName": "/home/christoffer/code/bioinfo/project5/project5.csproj",
       "projectName": "project5",
-      "projectPath": "/Users/changtrakul/code/bioinfo/project5/project5.csproj",
-      "packagesPath": "/Users/changtrakul/.nuget/packages/",
-      "outputPath": "/Users/changtrakul/code/bioinfo/project5/obj/",
+      "projectPath": "/home/christoffer/code/bioinfo/project5/project5.csproj",
+      "packagesPath": "/home/christoffer/.nuget/packages/",
+      "outputPath": "/home/christoffer/code/bioinfo/project5/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/changtrakul/.nuget/NuGet/NuGet.Config"
+        "/home/christoffer/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -96,12 +96,18 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[6.0.2, 6.0.2]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.202/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.102/RuntimeIdentifierGraph.json"
       }
     }
   },
