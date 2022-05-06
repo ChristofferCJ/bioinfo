@@ -18,7 +18,8 @@ static class Experiment
             timer.Start();
             var tree = saitouNei.ToTree(logRunningTime);
             timer.Stop();
-            NewickFormatter.ToFile(fileWithoutDirectory, tree);
+            var outputFileName = fileWithoutDirectory.Replace(".phy", ".new");
+            NewickFormatter.ToFile(outputFileName, tree);
             var timeInMs = timer.ElapsedMilliseconds;
             System.Console.WriteLine($"Result for {fileWithoutDirectory}: {timeInMs} ms");
             timer.Reset();

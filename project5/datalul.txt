@@ -42,6 +42,7 @@ Executed in 2020 ms
 1849_FG-GAP.phy
 Executed in 2610 ms
 
+
 RapidNJ
 ---------------------------------------------
 89_Adeno_E3_CR1.phy
@@ -86,35 +87,46 @@ Executed in 525.52 ms
 1849_FG-GAP.phy
 Executed in 512.91 ms
 
-
-
 My own crap
 ---------------------------------------------
-Running test for 1347_FAINT.phy
-Result for 1347_FAINT.phy: 81325 ms
-Running test for 89_Adeno_E3_CR1.phy
-Result for 89_Adeno_E3_CR1.phy: 27 ms
-Running test for 304_A1_Propeptide.phy
-Result for 304_A1_Propeptide.phy: 898 ms
-Running test for 1756_FAD_binding_3.phy
-Result for 1756_FAD_binding_3.phy: 191122 ms
-Running test for 214_Arena_glycoprot.phy
-Result for 214_Arena_glycoprot.phy: 306 ms
-Running test for 608_Gemini_AL2.phy
-Result for 608_Gemini_AL2.phy: 7437 ms
 Running test for 1849_FG-GAP.phy
-Result for 1849_FG-GAP.phy: 220408 ms
-Running test for 877_Glu_synthase.phy
-Result for 877_Glu_synthase.phy: 21216 ms
-Running test for 494_Astro_capsid.phy
-Result for 494_Astro_capsid.phy: 3840 ms
+Result for 1849_FG-GAP.phy: 37576 ms
+
 Running test for 1560_Ferritin.phy
-Result for 1560_Ferritin.phy: 130759 ms
-Running test for 1493_Fe-ADH.phy
-Result for 1493_Fe-ADH.phy: 114834 ms
-Running test for 777_Gemini_V1.phy
-Result for 777_Gemini_V1.phy: 15373 ms
-Running test for 1689_FGGY_N.phy
-Result for 1689_FGGY_N.phy: 169392 ms
+Result for 1560_Ferritin.phy: 21800 ms
+
+Running test for 89_Adeno_E3_CR1.phy
+Result for 89_Adeno_E3_CR1.phy: 4 ms
+
+Running test for 1347_FAINT.phy
+Result for 1347_FAINT.phy: 17126 ms
+
 Running test for 401_DDE.phy
-Result for 401_DDE.phy: 2111 ms
+Result for 401_DDE.phy: 352 ms
+
+Running test for 1756_FAD_binding_3.phy
+Result for 1756_FAD_binding_3.phy: 31034 ms
+
+Running test for 608_Gemini_AL2.phy
+Result for 608_Gemini_AL2.phy: 1004 ms
+
+Running test for 1493_Fe-ADH.phy
+Result for 1493_Fe-ADH.phy: 19432 ms
+
+Running test for 877_Glu_synthase.phy
+Result for 877_Glu_synthase.phy: 3430 ms
+
+Running test for 1689_FGGY_N.phy
+Result for 1689_FGGY_N.phy: 27225 ms
+
+Running test for 777_Gemini_V1.phy
+Result for 777_Gemini_V1.phy: 2051 ms
+
+Running test for 214_Arena_glycoprot.phy
+Result for 214_Arena_glycoprot.phy: 57 ms
+
+Running test for 494_Astro_capsid.phy
+Result for 494_Astro_capsid.phy: 498 ms
+
+Running test for 304_A1_Propeptide.phy
+Result for 304_A1_Propeptide.phy: 174 ms
