@@ -1,7 +1,8 @@
 # Project 5
 
 ## How to run
-
+`dotnet` version 6 is required to run this program.\
+To run this program, place the phylip file you would like to parse into the `PhylipFiles` folder in the project. Then, refer to the file in `Program.cs` by writing the name of the file on line 4. To specify an output file, write the name of the output file on line 11 of `Program.cs`.
 ## Introduction
 This project is involved with making an efficient implementation of a NJ algorithm, namely the Saitou and Nei algorithm. The project benchmarks this implementation against other NJ algortihms, namely QuickTree and RapidNJ.
 
