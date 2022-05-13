@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/changtrakul/code/bioinfo/project4/project4.csproj": {}
+    "/home/christoffer/code/bioinfo/project4/project4.csproj": {}
   },
   "projects": {
-    "/Users/changtrakul/code/bioinfo/project4/project4.csproj": {
+    "/home/christoffer/code/bioinfo/project4/project4.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/changtrakul/code/bioinfo/project4/project4.csproj",
+        "projectUniqueName": "/home/christoffer/code/bioinfo/project4/project4.csproj",
         "projectName": "project4",
-        "projectPath": "/Users/changtrakul/code/bioinfo/project4/project4.csproj",
-        "packagesPath": "/Users/changtrakul/.nuget/packages/",
-        "outputPath": "/Users/changtrakul/code/bioinfo/project4/obj/",
+        "projectPath": "/home/christoffer/code/bioinfo/project4/project4.csproj",
+        "packagesPath": "/home/christoffer/.nuget/packages/",
+        "outputPath": "/home/christoffer/code/bioinfo/project4/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/changtrakul/.nuget/NuGet/NuGet.Config"
+          "/home/christoffer/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -53,12 +53,18 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.2, 6.0.2]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.202/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.102/RuntimeIdentifierGraph.json"
         }
       }
     }

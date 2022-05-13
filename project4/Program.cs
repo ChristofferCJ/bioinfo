@@ -7,7 +7,6 @@ namespace project4
         static void Main(string[] args)
         {
 
-            Project5Test.Test();
             // var tree1Path = "rapidnj-muscle.new";
             // var tree2Path = "rapidnj-clustal-omega.new";
 
@@ -19,6 +18,8 @@ namespace project4
 
             // Console.WriteLine("Press any key to exit..");
             // Console.ReadKey();
+
+            Experiment.Run();
         }
     }
 }
