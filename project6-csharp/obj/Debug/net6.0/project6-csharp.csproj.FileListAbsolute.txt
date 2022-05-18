@@ -1,0 +1,15 @@
+/Users/changtrakul/code/bioinfo/project6-csharp/obj/Debug/net6.0/project6-csharp.csproj.AssemblyReference.cache
+/Users/changtrakul/code/bioinfo/project6-csharp/obj/Debug/net6.0/project6-csharp.GeneratedMSBuildEditorConfig.editorconfig
+/Users/changtrakul/code/bioinfo/project6-csharp/obj/Debug/net6.0/project6-csharp.AssemblyInfoInputs.cache
+/Users/changtrakul/code/bioinfo/project6-csharp/obj/Debug/net6.0/project6-csharp.AssemblyInfo.cs
+/Users/changtrakul/code/bioinfo/project6-csharp/obj/Debug/net6.0/project6-csharp.csproj.CoreCompileInputs.cache
+/Users/changtrakul/code/bioinfo/project6-csharp/bin/Debug/net6.0/project6-csharp
+/Users/changtrakul/code/bioinfo/project6-csharp/bin/Debug/net6.0/project6-csharp.deps.json
+/Users/changtrakul/code/bioinfo/project6-csharp/bin/Debug/net6.0/project6-csharp.runtimeconfig.json
+/Users/changtrakul/code/bioinfo/project6-csharp/bin/Debug/net6.0/project6-csharp.dll
+/Users/changtrakul/code/bioinfo/project6-csharp/bin/Debug/net6.0/project6-csharp.pdb
+/Users/changtrakul/code/bioinfo/project6-csharp/obj/Debug/net6.0/project6-csharp.dll
+/Users/changtrakul/code/bioinfo/project6-csharp/obj/Debug/net6.0/refint/project6-csharp.dll
+/Users/changtrakul/code/bioinfo/project6-csharp/obj/Debug/net6.0/project6-csharp.pdb
+/Users/changtrakul/code/bioinfo/project6-csharp/obj/Debug/net6.0/project6-csharp.genruntimeconfig.cache
+/Users/changtrakul/code/bioinfo/project6-csharp/obj/Debug/net6.0/ref/project6-csharp.dll
